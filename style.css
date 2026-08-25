@@ -41,11 +41,7 @@
   --peach: #ffd9cb;
   --yellow: #ffd76a;
 
-  /*
-     Compatibility colors.
-     Some existing elements originally used
-     coral / teal variables.
-  */
+  /* ---------- Compatibility colors ---------- */
 
   --coral: #ff7975;
   --teal: #79bfc2;
@@ -125,7 +121,6 @@ body.lightbox-open {
 
 img {
   display: block;
-
   max-width: 100%;
 }
 
@@ -145,7 +140,6 @@ h1,
 h2,
 h3 {
   font-family: var(--font-display);
-
   color: var(--ink);
 }
 
@@ -315,10 +309,7 @@ img.nav__logo {
 }
 
 
-/*
-   Fallback in case the HTML still contains
-   the original text logo instead of an image.
-*/
+/* ---------- Text-logo fallback ---------- */
 
 .nav__logo:not(img) {
   font-family: var(--font-display);
@@ -385,6 +376,9 @@ img.nav__logo {
   align-items: center;
   justify-content: space-between;
 
+  /* Allows the layout to wrap safely */
+  flex-wrap: wrap;
+
   gap: 56px;
 
   width:
@@ -436,8 +430,7 @@ img.nav__logo {
 
   border-radius: 50%;
 
-  background:
-    var(--blue);
+  background: var(--blue);
 
   filter: blur(90px);
 
@@ -460,8 +453,7 @@ img.nav__logo {
 
   border-radius: 50%;
 
-  background:
-    var(--pink-light);
+  background: var(--pink-light);
 
   filter: blur(95px);
 
@@ -562,20 +554,16 @@ img.nav__logo {
   flex:
     1 1 340px;
 
-  min-height:
-    430px;
+  min-width: 0;
 
-  display:
-    flex;
+  min-height: 430px;
 
-  flex-direction:
-    column;
+  display: flex;
 
-  align-items:
-    center;
+  flex-direction: column;
 
-  justify-content:
-    center;
+  align-items: center;
+  justify-content: center;
 }
 
 
@@ -620,35 +608,28 @@ img.nav__logo {
 /* ---------- Interactive piñata ---------- */
 
 .pinata {
-  position:
-    relative;
+  position: relative;
 
-  z-index:
-    2;
+  z-index: 2;
 
-  display:
-    block;
+  display: block;
 
   width:
     clamp(245px, 29vw, 335px);
 
-  height:
-    auto;
+  max-width: 100%;
 
-  opacity:
-    1;
+  height: auto;
 
-  visibility:
-    visible;
+  opacity: 1;
 
-  cursor:
-    pointer;
+  visibility: visible;
 
-  touch-action:
-    manipulation;
+  cursor: pointer;
 
-  user-select:
-    none;
+  touch-action: manipulation;
+
+  user-select: none;
 
   transform-origin:
     top center;
@@ -664,10 +645,7 @@ img.nav__logo {
 }
 
 
-/*
-   The JS adds this class during
-   the first two clicks.
-*/
+/* ---------- Piñata swing ---------- */
 
 .pinata.swing {
   animation:
@@ -675,11 +653,7 @@ img.nav__logo {
 }
 
 
-/*
-   On click number 3 the JS adds
-   "broken", plays this animation,
-   then sets visibility:hidden.
-*/
+/* ---------- Piñata break ---------- */
 
 .pinata.broken {
   animation:
@@ -758,11 +732,9 @@ img.nav__logo {
 /* ---------- "Toca la piñata" ---------- */
 
 .hero__hint {
-  position:
-    relative;
+  position: relative;
 
-  z-index:
-    3;
+  z-index: 3;
 
   margin-top:
     18px;
@@ -797,11 +769,9 @@ img.nav__logo {
 /* ---------- Discount reward ---------- */
 
 .surprise-badge {
-  position:
-    relative;
+  position: relative;
 
-  z-index:
-    4;
+  z-index: 4;
 
   max-width:
     330px;
@@ -840,8 +810,7 @@ img.nav__logo {
 
 
 .surprise-badge.hidden {
-  display:
-    none;
+  display: none;
 }
 
 
@@ -850,14 +819,12 @@ img.nav__logo {
 ===================================================== */
 
 .process {
-  position:
-    relative;
+  position: relative;
 
   padding:
     100px 48px;
 
-  overflow:
-    hidden;
+  overflow: hidden;
 
   background:
     linear-gradient(
@@ -900,8 +867,7 @@ img.nav__logo {
 
 
 .step {
-  position:
-    relative;
+  position: relative;
 
   min-width:
     0;
@@ -941,7 +907,6 @@ img.nav__logo {
 
   align-items:
     center;
-
   justify-content:
     center;
 
@@ -1974,7 +1939,9 @@ and (pointer: fine) {
   }
 
 
-  /* ---------- Hero ---------- */
+  /* ===================================================
+     HERO MOBILE
+  =================================================== */
 
   .hero {
     width:
@@ -1997,12 +1964,25 @@ and (pointer: fine) {
 
     text-align:
       center;
+
+    /* Critical mobile fix */
+    flex-direction:
+      column;
+
+    flex-wrap:
+      nowrap;
+
+    align-items:
+      center;
   }
 
 
   .hero__copy {
     flex:
-      1 1 100%;
+      none;
+
+    width:
+      100%;
 
     max-width:
       100%;
@@ -2033,12 +2013,36 @@ and (pointer: fine) {
   }
 
 
+  /*
+     Give the piñata zone its own full row
+     instead of competing with the text
+     for horizontal space.
+  */
+
   .hero__pinata-zone {
     flex:
-      1 1 100%;
+      none;
+
+    width:
+      100%;
+
+    min-width:
+      0;
 
     min-height:
       370px;
+
+    display:
+      flex;
+
+    flex-direction:
+      column;
+
+    align-items:
+      center;
+
+    justify-content:
+      center;
   }
 
 
@@ -2048,9 +2052,23 @@ and (pointer: fine) {
   }
 
 
+  /*
+     Keeps the entire SVG inside
+     the available mobile width.
+  */
+
   .pinata {
     width:
       min(275px, 72vw);
+
+    max-width:
+      100%;
+
+    height:
+      auto;
+
+    margin-inline:
+      auto;
   }
 
 
@@ -2104,8 +2122,8 @@ and (pointer: fine) {
 
 
   /*
-     Mobile has no hover.
-     Keep the gallery action visible.
+     Mobile has no hover,
+     so keep this visible.
   */
 
   .gallery__card::after {
@@ -2244,6 +2262,9 @@ and (pointer: fine) {
 
 
   .hero__pinata-zone {
+    width:
+      100%;
+
     min-height:
       340px;
   }
@@ -2252,6 +2273,15 @@ and (pointer: fine) {
   .pinata {
     width:
       min(250px, 74vw);
+
+    max-width:
+      100%;
+
+    height:
+      auto;
+
+    margin-inline:
+      auto;
   }
 
 }
