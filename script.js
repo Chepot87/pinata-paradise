@@ -5,215 +5,191 @@
 
 
 /* =====================================================
-   HERO PIÑATA
+   1. HERO PRODUCT TILT
 ===================================================== */
 
-const pinata = document.getElementById('pinata');
+const heroProductCard =
+  document.getElementById("hero-product-card");
 
-const badge = document.getElementById('surprise-badge');
-
-const HITS_NEEDED = 3;
-
-let hits = 0;
-
-let broken = false;
+const prefersReducedMotion =
+  window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  );
 
 
-/* =====================
-   PIÑATA CLICK
-===================== */
+if (
+  heroProductCard &&
+  !prefersReducedMotion.matches
+) {
 
-if (pinata) {
-
-  pinata.addEventListener('click', () => {
-
-    if (broken) return;
-
-    hits++;
-
-    if (hits < HITS_NEEDED) {
-
-      pinata.classList.remove('swing');
+  heroProductCard.addEventListener(
+    "pointermove",
+    (event) => {
 
       /*
-        Forces the browser to recalculate layout
-        so the animation can restart
+         Only use tilt with an actual mouse.
+
+         Mobile touch does not need this.
       */
 
-      void pinata.offsetWidth;
+      if (
+        event.pointerType !== "mouse"
+      ) {
+        return;
+      }
 
-      pinata.classList.add('swing');
 
-    } else {
+      const rect =
+        heroProductCard.getBoundingClientRect();
 
-      breakPinata();
+
+      const mouseX =
+        event.clientX - rect.left;
+
+      const mouseY =
+        event.clientY - rect.top;
+
+
+      const centerX =
+        rect.width / 2;
+
+      const centerY =
+        rect.height / 2;
+
+
+      const rotateY =
+        ((mouseX - centerX) / centerX) * 4;
+
+
+      const rotateX =
+        -((mouseY - centerY) / centerY) * 4;
+
+
+      heroProductCard.style.setProperty(
+        "--tilt-x",
+        `${rotateX}deg`
+      );
+
+
+      heroProductCard.style.setProperty(
+        "--tilt-y",
+        `${rotateY}deg`
+      );
 
     }
-
-  });
-
-}
+  );
 
 
-/* =====================
-   BREAK PIÑATA
-===================== */
+  heroProductCard.addEventListener(
+    "pointerleave",
+    () => {
 
-function breakPinata() {
-
-  broken = true;
-
-  pinata.classList.add('broken');
-
-  launchConfetti();
-
-  setTimeout(() => {
-
-    pinata.style.visibility = 'hidden';
-
-    badge.classList.remove('hidden');
-
-  }, 350);
-
-}
+      heroProductCard.style.setProperty(
+        "--tilt-x",
+        "0deg"
+      );
 
 
-/* =====================
-   CONFETTI
-===================== */
+      heroProductCard.style.setProperty(
+        "--tilt-y",
+        "0deg"
+      );
 
-function launchConfetti() {
-
-  const colors = [
-    '#FF6B4A',
-    '#FFC93C',
-    '#0F6B65',
-    '#FF3D8A'
-  ];
-
-
-  for (let i = 0; i < 36; i++) {
-
-    const piece = document.createElement('div');
-
-    piece.className = 'confetti';
-
-
-    /* random horizontal position */
-
-    piece.style.left =
-      Math.random() * 100 + 'vw';
-
-
-    /* random color */
-
-    piece.style.background =
-      colors[
-        Math.floor(
-          Math.random() * colors.length
-        )
-      ];
-
-
-    /* random fall speed */
-
-    piece.style.animationDuration =
-      (
-        Math.random() * 1.5 + 1.8
-      ) + 's';
-
-
-    document.body.appendChild(piece);
-
-
-    /* remove confetti after animation */
-
-    setTimeout(() => {
-
-      piece.remove();
-
-    }, 3500);
-
-  }
+    }
+  );
 
 }
 
 
 
 /* =====================================================
-   GALLERY LIGHTBOX
+   2. GALLERY LIGHTBOX
 ===================================================== */
-
-
-/* =====================
-   ELEMENTS
-===================== */
 
 const galleryCards =
   Array.from(
-    document.querySelectorAll('.gallery__card')
+    document.querySelectorAll(
+      ".gallery__card"
+    )
   );
 
 
 const lightbox =
-  document.getElementById('lightbox');
+  document.getElementById(
+    "lightbox"
+  );
 
 
 const lightboxImage =
-  document.getElementById('lightbox-image');
+  document.getElementById(
+    "lightbox-image"
+  );
 
 
 const lightboxTitle =
-  document.getElementById('lightbox-title');
+  document.getElementById(
+    "lightbox-title"
+  );
 
 
 const lightboxDescription =
-  document.getElementById('lightbox-description');
+  document.getElementById(
+    "lightbox-description"
+  );
 
 
 const lightboxCounter =
-  document.getElementById('lightbox-counter');
+  document.getElementById(
+    "lightbox-counter"
+  );
 
 
 const lightboxClose =
-  document.getElementById('lightbox-close');
+  document.getElementById(
+    "lightbox-close"
+  );
 
 
 const lightboxPrev =
-  document.getElementById('lightbox-prev');
+  document.getElementById(
+    "lightbox-prev"
+  );
 
 
 const lightboxNext =
-  document.getElementById('lightbox-next');
+  document.getElementById(
+    "lightbox-next"
+  );
 
 
 const lightboxBackdrop =
-  document.querySelector('.lightbox__backdrop');
+  document.querySelector(
+    ".lightbox__backdrop"
+  );
 
 
-
-/* =====================
-   LIGHTBOX STATE
-===================== */
 
 let currentIndex = 0;
 
 let lastFocusedElement = null;
 
 
-
 /* =====================================================
-   OPEN LIGHTBOX
+   3. OPEN LIGHTBOX
 ===================================================== */
 
 function openLightbox(index) {
 
-  if (!lightbox || !galleryCards.length) {
+  if (
+    !lightbox ||
+    !galleryCards.length
+  ) {
     return;
   }
 
 
-  currentIndex = index;
+  currentIndex =
+    index;
 
 
   lastFocusedElement =
@@ -223,86 +199,91 @@ function openLightbox(index) {
   updateLightbox();
 
 
-  lightbox.classList.add('active');
+  lightbox.classList.add(
+    "active"
+  );
 
 
   lightbox.setAttribute(
-    'aria-hidden',
-    'false'
+    "aria-hidden",
+    "false"
   );
 
 
   document.body.classList.add(
-    'lightbox-open'
+    "lightbox-open"
   );
 
 
-  /*
-    Small timeout lets the lightbox appear
-    before moving keyboard focus
-  */
+  setTimeout(
+    () => {
 
-  setTimeout(() => {
+      if (
+        lightboxClose
+      ) {
+        lightboxClose.focus();
+      }
 
-    lightboxClose.focus();
-
-  }, 50);
+    },
+    50
+  );
 
 }
 
 
-
 /* =====================================================
-   CLOSE LIGHTBOX
+   4. CLOSE LIGHTBOX
 ===================================================== */
 
 function closeLightbox() {
 
-  if (!lightbox) {
+  if (
+    !lightbox
+  ) {
     return;
   }
 
 
-  lightbox.classList.remove('active');
+  lightbox.classList.remove(
+    "active"
+  );
 
 
   lightbox.setAttribute(
-    'aria-hidden',
-    'true'
+    "aria-hidden",
+    "true"
   );
 
 
   document.body.classList.remove(
-    'lightbox-open'
+    "lightbox-open"
   );
 
 
-  /*
-    Return keyboard focus
-    to the gallery item that opened it
-  */
-
-  if (lastFocusedElement) {
-
+  if (
+    lastFocusedElement
+  ) {
     lastFocusedElement.focus();
-
   }
 
 }
 
 
-
 /* =====================================================
-   UPDATE LIGHTBOX CONTENT
+   5. UPDATE CONTENT
 ===================================================== */
 
 function updateLightbox() {
 
   const card =
-    galleryCards[currentIndex];
+    galleryCards[
+      currentIndex
+    ];
 
 
-  if (!card) {
+  if (
+    !card
+  ) {
     return;
   }
 
@@ -319,33 +300,25 @@ function updateLightbox() {
     card.dataset.description;
 
 
-  /*
-    Update image
-  */
+  lightboxImage.src =
+    image;
 
-  lightboxImage.src = image;
 
   lightboxImage.alt =
     title
       ? `Piñata ${title}`
-      : 'Diseño de piñata';
+      : "Diseño de piñata";
 
-
-  /*
-    Update text
-  */
 
   lightboxTitle.textContent =
-    title || 'Piñata personalizada';
+    title ||
+    "Piñata personalizada";
 
 
   lightboxDescription.textContent =
-    description || '';
+    description ||
+    "";
 
-
-  /*
-    Update counter
-  */
 
   lightboxCounter.textContent =
     `${currentIndex + 1} / ${galleryCards.length}`;
@@ -353,63 +326,69 @@ function updateLightbox() {
 }
 
 
-
 /* =====================================================
-   NEXT IMAGE
+   6. NEXT IMAGE
 ===================================================== */
 
 function showNextImage() {
 
   currentIndex++;
 
+
   if (
     currentIndex >=
     galleryCards.length
   ) {
 
-    currentIndex = 0;
+    currentIndex =
+      0;
 
   }
+
 
   updateLightbox();
 
 }
 
 
-
 /* =====================================================
-   PREVIOUS IMAGE
+   7. PREVIOUS IMAGE
 ===================================================== */
 
 function showPreviousImage() {
 
   currentIndex--;
 
-  if (currentIndex < 0) {
+
+  if (
+    currentIndex < 0
+  ) {
 
     currentIndex =
       galleryCards.length - 1;
 
   }
 
+
   updateLightbox();
 
 }
 
 
-
 /* =====================================================
-   GALLERY CARD EVENTS
+   8. CARD EVENTS
 ===================================================== */
 
 galleryCards.forEach(
   (card, index) => {
 
     card.addEventListener(
-      'click',
+      "click",
       () => {
 
-        openLightbox(index);
+        openLightbox(
+          index
+        );
 
       }
     );
@@ -418,101 +397,97 @@ galleryCards.forEach(
 );
 
 
-
 /* =====================================================
-   LIGHTBOX BUTTON EVENTS
+   9. LIGHTBOX BUTTON EVENTS
 ===================================================== */
 
-if (lightboxClose) {
+if (
+  lightboxClose
+) {
 
   lightboxClose.addEventListener(
-    'click',
+    "click",
     closeLightbox
   );
 
 }
 
 
-if (lightboxNext) {
+if (
+  lightboxNext
+) {
 
   lightboxNext.addEventListener(
-    'click',
+    "click",
     showNextImage
   );
 
 }
 
 
-if (lightboxPrev) {
+if (
+  lightboxPrev
+) {
 
   lightboxPrev.addEventListener(
-    'click',
+    "click",
     showPreviousImage
   );
 
 }
 
 
-
-/* =====================================================
-   CLOSE BY CLICKING BACKDROP
-===================================================== */
-
-if (lightboxBackdrop) {
+if (
+  lightboxBackdrop
+) {
 
   lightboxBackdrop.addEventListener(
-    'click',
+    "click",
     closeLightbox
   );
 
 }
 
 
-
 /* =====================================================
-   KEYBOARD CONTROLS
+   10. KEYBOARD CONTROLS
 ===================================================== */
 
 document.addEventListener(
-  'keydown',
+  "keydown",
   (event) => {
-
-    /*
-      Do nothing if lightbox
-      is not currently open
-    */
 
     if (
       !lightbox ||
-      !lightbox.classList.contains('active')
+      !lightbox.classList.contains(
+        "active"
+      )
     ) {
-
       return;
-
     }
 
 
-    /* ESC closes */
-
-    if (event.key === 'Escape') {
+    if (
+      event.key === "Escape"
+    ) {
 
       closeLightbox();
 
     }
 
 
-    /* right arrow */
-
-    if (event.key === 'ArrowRight') {
+    if (
+      event.key === "ArrowRight"
+    ) {
 
       showNextImage();
 
     }
 
 
-    /* left arrow */
-
-    if (event.key === 'ArrowLeft') {
+    if (
+      event.key === "ArrowLeft"
+    ) {
 
       showPreviousImage();
 

@@ -10,19 +10,13 @@
 
 :root {
 
-  /* ---------- Main surfaces ---------- */
-
   --paper: #fff9fb;
   --white: #ffffff;
   --cream: #fff5ee;
 
-  /* ---------- Text ---------- */
-
   --ink: #2d2630;
   --ink-soft: #5f5662;
   --text-muted: #766d78;
-
-  /* ---------- Brand palette ---------- */
 
   --brand: #f34f76;
   --brand-dark: #da3d64;
@@ -39,29 +33,29 @@
   --peach: #ffd9cb;
   --yellow: #ffd76a;
 
-  --coral: #ff7975;
-  --teal: #79bfc2;
+  --font-display:
+    'Baloo 2',
+    sans-serif;
 
-  /* ---------- Fonts ---------- */
-
-  --font-display: 'Baloo 2', sans-serif;
-  --font-body: 'Work Sans', sans-serif;
-
-  /* ---------- Shadows ---------- */
+  --font-body:
+    'Work Sans',
+    sans-serif;
 
   --shadow-xs:
-    0 4px 14px rgba(71, 48, 67, 0.06);
+    0 4px 14px
+    rgba(71, 48, 67, 0.06);
 
   --shadow-sm:
-    0 10px 25px rgba(71, 48, 67, 0.09);
+    0 10px 25px
+    rgba(71, 48, 67, 0.09);
 
   --shadow-md:
-    0 18px 42px rgba(71, 48, 67, 0.14);
+    0 18px 42px
+    rgba(71, 48, 67, 0.14);
 
   --shadow-lg:
-    0 30px 80px rgba(26, 19, 27, 0.28);
-
-  /* ---------- Radius ---------- */
+    0 30px 80px
+    rgba(26, 19, 27, 0.28);
 
   --radius-sm: 12px;
   --radius-md: 18px;
@@ -69,10 +63,13 @@
   --radius-xl: 40px;
   --radius-pill: 999px;
 
-  /* ---------- Motion ---------- */
-
   --ease:
-    cubic-bezier(0.22, 1, 0.36, 1);
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
 }
 
 
@@ -85,6 +82,7 @@
 *::after {
   margin: 0;
   padding: 0;
+
   box-sizing: border-box;
 }
 
@@ -97,68 +95,87 @@ html {
 body {
   min-width: 320px;
 
-  font-family: var(--font-body);
+  font-family:
+    var(--font-body);
 
-  background-color: var(--paper);
+  color:
+    var(--ink);
+
+  line-height:
+    1.6;
+
+  overflow-x:
+    hidden;
+
+  background-color:
+    var(--paper);
 
   background-image:
     linear-gradient(
-      rgba(255, 249, 251, 0.30),
-      rgba(255, 249, 251, 0.30)
+      rgba(255, 249, 251, 0.28),
+      rgba(255, 249, 251, 0.28)
     ),
     url("img/background.png");
 
-  background-size: cover;
+  background-size:
+    cover;
 
-  background-position: center top;
+  background-position:
+    center top;
 
-  background-repeat: no-repeat;
+  background-repeat:
+    no-repeat;
 
-  background-attachment: fixed;
+  background-attachment:
+    fixed;
 
-  color: var(--ink);
-
-  line-height: 1.6;
-
-  overflow-x: hidden;
-
-  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing:
+    antialiased;
 }
 
 
 body.lightbox-open {
-  overflow: hidden;
+  overflow:
+    hidden;
 }
 
 
 img {
-  display: block;
-  max-width: 100%;
+  display:
+    block;
+
+  max-width:
+    100%;
 }
 
 
 button,
 a {
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color:
+    transparent;
 }
 
 
 button {
-  font: inherit;
+  font:
+    inherit;
 }
 
 
 h1,
 h2,
 h3 {
-  font-family: var(--font-display);
+  font-family:
+    var(--font-display);
 
-  color: var(--ink);
+  color:
+    var(--ink);
 }
 
 
 a {
-  color: inherit;
+  color:
+    inherit;
 }
 
 
@@ -167,24 +184,35 @@ a {
 ===================================================== */
 
 .btn {
-  display: inline-flex;
+  display:
+    inline-flex;
 
-  align-items: center;
-  justify-content: center;
+  align-items:
+    center;
 
-  min-height: 50px;
+  justify-content:
+    center;
 
-  padding: 14px 28px;
+  min-height:
+    50px;
 
-  border-radius: var(--radius-pill);
+  padding:
+    14px 28px;
 
-  font-family: var(--font-body);
+  border-radius:
+    var(--radius-pill);
 
-  font-weight: 600;
+  font-family:
+    var(--font-body);
 
-  text-decoration: none;
+  font-weight:
+    600;
 
-  cursor: pointer;
+  text-decoration:
+    none;
+
+  cursor:
+    pointer;
 
   transition:
     transform 0.25s var(--ease),
@@ -195,44 +223,58 @@ a {
 
 
 .btn--primary {
-  background: var(--brand);
+  background:
+    var(--brand);
 
-  color: var(--white);
+  color:
+    var(--white);
 
   box-shadow:
-    0 12px 28px rgba(243, 79, 118, 0.25);
+    0 12px 28px
+    rgba(243, 79, 118, 0.25);
 }
 
 
 /* =====================================================
-   4. GENERAL SECTION ELEMENTS
+   4. GENERAL SECTIONS
 ===================================================== */
 
 .section-title {
-  position: relative;
+  position:
+    relative;
+
+  margin-bottom:
+    12px;
 
   font-size:
     clamp(2rem, 4vw, 2.7rem);
 
-  line-height: 1.1;
+  line-height:
+    1.1;
 
-  text-align: center;
-
-  margin-bottom: 12px;
+  text-align:
+    center;
 }
 
 
 .section-title::after {
-  content: "";
+  content:
+    "";
 
-  display: block;
+  display:
+    block;
 
-  width: 44px;
-  height: 5px;
+  width:
+    44px;
 
-  margin: 12px auto 0;
+  height:
+    5px;
 
-  border-radius: var(--radius-pill);
+  margin:
+    12px auto 0;
+
+  border-radius:
+    var(--radius-pill);
 
   background:
     linear-gradient(
@@ -245,16 +287,20 @@ a {
 
 
 .section-sub {
-  max-width: 640px;
+  max-width:
+    640px;
 
   margin:
     0 auto 42px;
 
-  text-align: center;
+  color:
+    var(--text-muted);
 
-  color: var(--text-muted);
+  font-size:
+    0.98rem;
 
-  font-size: 0.98rem;
+  text-align:
+    center;
 }
 
 
@@ -263,44 +309,61 @@ a {
 ===================================================== */
 
 .nav {
-  position: sticky;
+  position:
+    sticky;
 
-  top: 0;
+  top:
+    0;
 
-  z-index: 1000;
+  z-index:
+    1000;
 
-  display: flex;
+  display:
+    flex;
 
-  align-items: center;
-  justify-content: space-between;
+  align-items:
+    center;
 
-  min-height: 88px;
+  justify-content:
+    space-between;
 
-  padding: 8px 48px;
+  min-height:
+    88px;
 
-  background:
-    rgba(255, 249, 251, 0.74);
+  padding:
+    8px 48px;
 
   border-bottom:
-    1px solid rgba(243, 79, 118, 0.08);
+    1px solid
+    rgba(243, 79, 118, 0.08);
 
-  backdrop-filter: blur(18px);
+  background:
+    rgba(255, 249, 251, 0.76);
 
-  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter:
+    blur(18px);
+
+  -webkit-backdrop-filter:
+    blur(18px);
 
   box-shadow:
-    0 4px 20px rgba(59, 38, 54, 0.04);
+    0 4px 20px
+    rgba(59, 38, 54, 0.04);
 }
 
 
 .nav__brand {
-  display: inline-flex;
+  display:
+    inline-flex;
 
-  align-items: center;
+  align-items:
+    center;
 
-  flex-shrink: 0;
+  flex-shrink:
+    0;
 
-  text-decoration: none;
+  text-decoration:
+    none;
 }
 
 
@@ -308,9 +371,11 @@ img.nav__logo {
   width:
     clamp(80px, 8vw, 104px);
 
-  height: auto;
+  height:
+    auto;
 
-  object-fit: contain;
+  object-fit:
+    contain;
 
   transition:
     transform 0.3s var(--ease),
@@ -318,27 +383,21 @@ img.nav__logo {
 }
 
 
-.nav__logo:not(img) {
-  font-family: var(--font-display);
-
-  font-weight: 800;
-
-  font-size: 1.35rem;
-
-  color: var(--brand);
-}
-
-
 .nav__link {
-  position: relative;
+  position:
+    relative;
 
-  padding: 10px 4px;
+  padding:
+    10px 4px;
 
-  color: var(--ink);
+  color:
+    var(--ink);
 
-  text-decoration: none;
+  font-weight:
+    600;
 
-  font-weight: 600;
+  text-decoration:
+    none;
 
   transition:
     color 0.25s ease;
@@ -346,21 +405,32 @@ img.nav__logo {
 
 
 .nav__link::after {
-  content: "";
+  content:
+    "";
 
-  position: absolute;
+  position:
+    absolute;
 
-  left: 50%;
-  bottom: 5px;
+  left:
+    50%;
 
-  width: 0;
-  height: 2px;
+  bottom:
+    5px;
 
-  border-radius: var(--radius-pill);
+  width:
+    0;
 
-  background: var(--brand);
+  height:
+    2px;
 
-  transform: translateX(-50%);
+  border-radius:
+    var(--radius-pill);
+
+  background:
+    var(--brand);
+
+  transform:
+    translateX(-50%);
 
   transition:
     width 0.3s var(--ease);
@@ -372,42 +442,51 @@ img.nav__logo {
 ===================================================== */
 
 .hero {
-  position: relative;
+  position:
+    relative;
 
-  isolation: isolate;
+  isolation:
+    isolate;
 
-  display: flex;
+  display:
+    flex;
 
-  align-items: center;
-  justify-content: space-between;
+  align-items:
+    center;
 
-  flex-wrap: wrap;
+  justify-content:
+    space-between;
 
-  gap: 56px;
+  flex-wrap:
+    wrap;
+
+  gap:
+    56px;
 
   width:
-    min(calc(100% - 48px), 1200px);
+    min(
+      calc(100% - 48px),
+      1200px
+    );
 
-  min-height: 570px;
+  min-height:
+    580px;
 
   margin:
     24px auto 80px;
 
   padding:
-    70px 64px;
+    68px 64px;
 
-  overflow: hidden;
+  overflow:
+    hidden;
 
   border:
-    1px solid rgba(255, 255, 255, 0.62);
+    1px solid
+    rgba(255, 255, 255, 0.62);
 
   border-radius:
     var(--radius-xl);
-
-  /*
-     Translucent instead of opaque.
-     This allows background.png to show through.
-  */
 
   background:
     rgba(255, 255, 255, 0.46);
@@ -419,85 +498,123 @@ img.nav__logo {
     blur(10px);
 
   box-shadow:
-    0 20px 55px rgba(71, 48, 67, 0.11);
+    0 20px 55px
+    rgba(71, 48, 67, 0.11);
 }
 
 
-/* ---------- Decorative Hero Glow ---------- */
+/* pastel glow */
 
 .hero::before {
-  content: "";
+  content:
+    "";
 
-  position: absolute;
+  position:
+    absolute;
 
-  width: 440px;
-  height: 440px;
+  width:
+    440px;
 
-  top: -180px;
-  right: -100px;
+  height:
+    440px;
 
-  z-index: -1;
+  top:
+    -190px;
 
-  border-radius: 50%;
+  right:
+    -120px;
 
-  background: var(--blue);
+  z-index:
+    -1;
 
-  filter: blur(90px);
+  border-radius:
+    50%;
 
-  opacity: 0.24;
+  background:
+    var(--blue);
+
+  filter:
+    blur(90px);
+
+  opacity:
+    0.25;
 }
 
 
 .hero::after {
-  content: "";
+  content:
+    "";
 
-  position: absolute;
+  position:
+    absolute;
 
-  width: 380px;
-  height: 380px;
+  width:
+    400px;
 
-  left: -170px;
-  bottom: -210px;
+  height:
+    400px;
 
-  z-index: -1;
+  left:
+    -190px;
 
-  border-radius: 50%;
+  bottom:
+    -220px;
 
-  background: var(--pink-light);
+  z-index:
+    -1;
 
-  filter: blur(95px);
+  border-radius:
+    50%;
 
-  opacity: 0.22;
+  background:
+    var(--pink-light);
+
+  filter:
+    blur(95px);
+
+  opacity:
+    0.24;
 }
 
 
-/* ---------- Hero Text ---------- */
+/* =====================================================
+   7. HERO COPY
+===================================================== */
 
 .hero__copy {
-  position: relative;
+  position:
+    relative;
 
-  z-index: 2;
+  z-index:
+    3;
 
   flex:
     1 1 430px;
 
-  max-width: 540px;
+  max-width:
+    540px;
 }
 
 
 .hero__eyebrow {
-  display: inline-block;
+  display:
+    inline-block;
 
-  margin-bottom: 16px;
+  margin-bottom:
+    16px;
 
   padding:
     8px 14px;
+
+  border:
+    1px solid
+    rgba(243, 79, 118, 0.08);
 
   border-radius:
     var(--radius-pill);
 
   background:
-    rgba(255, 240, 246, 0.82);
+    rgba(255, 240, 246, 0.8);
 
   color:
     var(--brand-dark);
@@ -526,6 +643,9 @@ img.nav__logo {
   margin-bottom:
     22px;
 
+  color:
+    var(--ink);
+
   font-size:
     clamp(3rem, 6vw, 5rem);
 
@@ -534,15 +654,12 @@ img.nav__logo {
 
   letter-spacing:
     -0.035em;
-
-  color:
-    var(--ink);
 }
 
 
 .hero__sub {
   max-width:
-    470px;
+    490px;
 
   margin-bottom:
     30px;
@@ -559,39 +676,50 @@ img.nav__logo {
 
 
 /* =====================================================
-   7. HERO PIÑATA ZONE
+   8. HERO PRODUCT ZONE
 ===================================================== */
 
-.hero__pinata-zone {
-  position: relative;
+.hero__product-zone {
+  position:
+    relative;
 
-  isolation: isolate;
+  isolation:
+    isolate;
 
   flex:
-    1 1 340px;
+    1 1 350px;
 
-  min-width: 0;
+  min-width:
+    0;
 
-  min-height: 430px;
+  min-height:
+    450px;
 
-  display: flex;
+  display:
+    flex;
 
-  flex-direction: column;
+  flex-direction:
+    column;
 
-  align-items: center;
-  justify-content: center;
+  align-items:
+    center;
+
+  justify-content:
+    center;
 }
 
 
-/* ---------- Soft backdrop behind piñata ---------- */
+/* larger abstract shape */
 
-.hero__pinata-zone::before {
-  content: "";
+.hero__product-zone::before {
+  content:
+    "";
 
-  position: absolute;
+  position:
+    absolute;
 
   width:
-    min(370px, 85vw);
+    min(410px, 90vw);
 
   aspect-ratio:
     1;
@@ -607,156 +735,532 @@ img.nav__logo {
     linear-gradient(
       145deg,
       rgba(189, 225, 248, 0.52),
-      rgba(249, 189, 216, 0.36),
-      rgba(233, 221, 255, 0.40)
+      rgba(249, 189, 216, 0.38),
+      rgba(233, 221, 255, 0.43)
     );
 
   box-shadow:
     inset
-    0 0 60px
-    rgba(255, 255, 255, 0.45);
+    0 0 70px
+    rgba(255, 255, 255, 0.52);
 
   transform:
-    rotate(-5deg);
+    rotate(-6deg);
 }
 
 
-/* ---------- Interactive Piñata ---------- */
+/* =====================================================
+   9. HERO PRODUCT
+===================================================== */
 
-.pinata {
-  position: relative;
+.hero-product {
+  position:
+    relative;
 
-  z-index: 2;
-
-  display: block;
+  z-index:
+    2;
 
   width:
-    clamp(245px, 29vw, 335px);
+    min(100%, 355px);
 
-  max-width: 100%;
+  display:
+    flex;
 
-  height: auto;
+  align-items:
+    center;
 
-  opacity: 1;
+  justify-content:
+    center;
 
-  visibility: visible;
-
-  cursor: pointer;
-
-  touch-action: manipulation;
-
-  user-select: none;
-
-  transform-origin:
-    top center;
-
-  filter:
-    drop-shadow(
-      0 18px 20px
-      rgba(55, 37, 52, 0.14)
-    );
-
-  transition:
-    filter 0.25s ease;
-}
-
-
-.pinata.swing {
   animation:
-    swing 0.4s ease;
+    heroFloat
+    5.8s
+    ease-in-out
+    infinite;
 }
 
 
-.pinata.broken {
-  animation:
-    break-anim
-    0.45s ease
-    forwards;
-}
+/* =====================================================
+   10. PRODUCT CARD
+===================================================== */
 
+.hero-product__card {
+  --tilt-x:
+    0deg;
 
-/* ---------- Swing animation ---------- */
+  --tilt-y:
+    0deg;
 
-@keyframes swing {
+  position:
+    relative;
 
-  0% {
-    transform:
-      rotate(0deg);
-  }
+  z-index:
+    3;
 
-  20% {
-    transform:
-      rotate(-11deg);
-  }
-
-  45% {
-    transform:
-      rotate(8deg);
-  }
-
-  70% {
-    transform:
-      rotate(-4deg);
-  }
-
-  100% {
-    transform:
-      rotate(0deg);
-  }
-
-}
-
-
-/* ---------- Break animation ---------- */
-
-@keyframes break-anim {
-
-  0% {
-    transform:
-      scale(1)
-      rotate(0deg);
-
-    opacity:
-      1;
-  }
-
-  45% {
-    transform:
-      scale(1.08)
-      rotate(-5deg);
-
-    opacity:
-      1;
-  }
-
-  100% {
-    transform:
-      scale(1.18)
-      rotate(9deg);
-
-    opacity:
-      0;
-  }
-
-}
-
-
-/* ---------- Touch Hint ---------- */
-
-.hero__hint {
-  position: relative;
-
-  z-index: 3;
-
-  margin-top:
-    18px;
+  width:
+    100%;
 
   padding:
-    7px 13px;
+    15px;
+
+  overflow:
+    visible;
 
   border:
     1px solid
-    rgba(243, 79, 118, 0.12);
+    rgba(255, 255, 255, 0.72);
+
+  border-radius:
+    30px;
+
+  background:
+    rgba(255, 255, 255, 0.74);
+
+  backdrop-filter:
+    blur(12px);
+
+  -webkit-backdrop-filter:
+    blur(12px);
+
+  box-shadow:
+    0 25px 55px
+    rgba(64, 45, 60, 0.16);
+
+  transform:
+    perspective(900px)
+    rotateX(var(--tilt-x))
+    rotateY(var(--tilt-y))
+    rotate(-2deg);
+
+  transform-style:
+    preserve-3d;
+
+  transition:
+    transform 0.22s ease-out,
+    box-shadow 0.3s ease;
+}
+
+
+.hero-product__image-wrap {
+  overflow:
+    hidden;
+
+  border-radius:
+    22px;
+
+  background:
+    var(--blue-light);
+}
+
+
+.hero-product__img {
+  display:
+    block;
+
+  width:
+    100%;
+
+  aspect-ratio:
+    4 / 4.8;
+
+  object-fit:
+    cover;
+
+  object-position:
+    center;
+
+  transition:
+    transform 0.6s var(--ease);
+}
+
+
+/* badge */
+
+.hero-product__badge {
+  position:
+    absolute;
+
+  top:
+    -13px;
+
+  right:
+    18px;
+
+  z-index:
+    5;
+
+  padding:
+    8px 14px;
+
+  border-radius:
+    var(--radius-pill);
+
+  background:
+    var(--brand);
+
+  color:
+    var(--white);
+
+  font-size:
+    0.75rem;
+
+  font-weight:
+    700;
+
+  box-shadow:
+    0 10px 24px
+    rgba(243, 79, 118, 0.28);
+}
+
+
+/* bottom info */
+
+.hero-product__caption {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+
+  gap:
+    12px;
+
+  padding:
+    16px 5px 4px;
+}
+
+
+.hero-product__label {
+  display:
+    block;
+
+  margin-bottom:
+    1px;
+
+  color:
+    var(--text-muted);
+
+  font-size:
+    0.7rem;
+
+  font-weight:
+    600;
+
+  letter-spacing:
+    0.05em;
+
+  text-transform:
+    uppercase;
+}
+
+
+.hero-product__caption h2 {
+  margin:
+    0;
+
+  color:
+    var(--ink);
+
+  font-size:
+    1.35rem;
+
+  line-height:
+    1;
+}
+
+
+.hero-product__heart {
+  width:
+    38px;
+
+  height:
+    38px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  flex-shrink:
+    0;
+
+  border-radius:
+    50%;
+
+  background:
+    var(--pink-soft);
+
+  color:
+    var(--brand);
+
+  font-size:
+    1rem;
+}
+
+
+/* =====================================================
+   11. ABSTRACT PRODUCT DECORATIONS
+===================================================== */
+
+.hero-product__blob {
+  position:
+    absolute;
+
+  z-index:
+    0;
+
+  border-radius:
+    50%;
+
+  pointer-events:
+    none;
+}
+
+
+.hero-product__blob--1 {
+  width:
+    100px;
+
+  height:
+    100px;
+
+  top:
+    -25px;
+
+  left:
+    -32px;
+
+  background:
+    rgba(142, 201, 239, 0.7);
+
+  animation:
+    blobOne
+    7s
+    ease-in-out
+    infinite;
+}
+
+
+.hero-product__blob--2 {
+  width:
+    82px;
+
+  height:
+    82px;
+
+  right:
+    -25px;
+
+  bottom:
+    30px;
+
+  background:
+    rgba(249, 189, 216, 0.78);
+
+  animation:
+    blobTwo
+    7.5s
+    ease-in-out
+    infinite;
+}
+
+
+/* dots */
+
+.hero-product__dot {
+  position:
+    absolute;
+
+  z-index:
+    4;
+
+  border-radius:
+    50%;
+
+  pointer-events:
+    none;
+}
+
+
+.hero-product__dot--1 {
+  width:
+    10px;
+
+  height:
+    10px;
+
+  top:
+    14%;
+
+  left:
+    -15px;
+
+  background:
+    var(--yellow);
+
+  animation:
+    smallFloat
+    5s
+    ease-in-out
+    infinite;
+}
+
+
+.hero-product__dot--2 {
+  width:
+    8px;
+
+  height:
+    8px;
+
+  right:
+    -14px;
+
+  bottom:
+    28%;
+
+  background:
+    var(--pink);
+
+  animation:
+    smallFloat
+    6s
+    ease-in-out
+    infinite
+    0.6s;
+}
+
+
+/* sparkles */
+
+.hero-product__sparkle {
+  position:
+    absolute;
+
+  z-index:
+    5;
+
+  width:
+    18px;
+
+  height:
+    18px;
+
+  pointer-events:
+    none;
+
+  background:
+    var(--brand);
+
+  clip-path:
+    polygon(
+      50% 0%,
+      61% 35%,
+      100% 50%,
+      61% 65%,
+      50% 100%,
+      39% 65%,
+      0% 50%,
+      39% 35%
+    );
+
+  filter:
+    drop-shadow(
+      0 5px 8px
+      rgba(243, 79, 118, 0.15)
+    );
+}
+
+
+.hero-product__sparkle--1 {
+  top:
+    14%;
+
+  right:
+    -18px;
+
+  background:
+    var(--brand);
+
+  animation:
+    sparkle
+    5s
+    ease-in-out
+    infinite;
+}
+
+
+.hero-product__sparkle--2 {
+  left:
+    -19px;
+
+  bottom:
+    19%;
+
+  background:
+    var(--blue-strong);
+
+  animation:
+    sparkle
+    6s
+    ease-in-out
+    infinite
+    0.8s;
+}
+
+
+.hero-product__sparkle--3 {
+  width:
+    13px;
+
+  height:
+    13px;
+
+  right:
+    -28px;
+
+  top:
+    56%;
+
+  background:
+    var(--yellow);
+
+  animation:
+    sparkle
+    6.7s
+    ease-in-out
+    infinite
+    0.3s;
+}
+
+
+/* =====================================================
+   12. HERO HINT
+===================================================== */
+
+.hero__hint {
+  position:
+    relative;
+
+  z-index:
+    3;
+
+  margin-top:
+    22px;
+
+  padding:
+    8px 14px;
+
+  border:
+    1px solid
+    rgba(243, 79, 118, 0.10);
 
   border-radius:
     var(--radius-pill);
@@ -768,7 +1272,7 @@ img.nav__logo {
     var(--text-muted);
 
   font-size:
-    0.78rem;
+    0.76rem;
 
   font-weight:
     600;
@@ -784,70 +1288,118 @@ img.nav__logo {
 }
 
 
-/* ---------- Discount Reward ---------- */
+/* =====================================================
+   13. HERO ANIMATIONS
+===================================================== */
 
-.surprise-badge {
-  position: relative;
+@keyframes heroFloat {
 
-  z-index: 4;
+  0%,
+  100% {
+    transform:
+      translateY(0);
+  }
 
-  max-width:
-    330px;
+  50% {
+    transform:
+      translateY(-9px);
+  }
 
-  margin-top:
-    18px;
-
-  padding:
-    14px 20px;
-
-  border:
-    1px solid
-    rgba(219, 169, 31, 0.25);
-
-  border-radius:
-    16px;
-
-  background:
-    var(--yellow);
-
-  color:
-    var(--ink);
-
-  font-size:
-    0.9rem;
-
-  font-weight:
-    700;
-
-  text-align:
-    center;
-
-  box-shadow:
-    var(--shadow-sm);
 }
 
 
-.surprise-badge.hidden {
-  display: none;
+@keyframes blobOne {
+
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      translateY(-8px)
+      scale(1.05);
+  }
+
+}
+
+
+@keyframes blobTwo {
+
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      translateY(8px)
+      scale(1.05);
+  }
+
+}
+
+
+@keyframes sparkle {
+
+  0%,
+  100% {
+    transform:
+      rotate(0deg)
+      scale(1);
+
+    opacity:
+      0.72;
+  }
+
+  50% {
+    transform:
+      rotate(12deg)
+      scale(1.16);
+
+    opacity:
+      1;
+  }
+
+}
+
+
+@keyframes smallFloat {
+
+  0%,
+  100% {
+    transform:
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      translateY(-8px);
+  }
+
 }
 
 
 /* =====================================================
-   8. HOW IT WORKS / PROCESS
+   14. HOW IT WORKS
 ===================================================== */
 
 .process {
-  position: relative;
+  position:
+    relative;
 
   padding:
     100px 48px;
 
-  overflow: hidden;
+  overflow:
+    hidden;
 
-  /*
-     This section intentionally has its own background
-     to visually separate it from the page background.
-  */
+  color:
+    var(--ink);
 
   background:
     linear-gradient(
@@ -856,15 +1408,6 @@ img.nav__logo {
       rgba(237, 248, 255, 0.95) 52%,
       rgba(233, 221, 255, 0.92) 100%
     );
-
-  color:
-    var(--ink);
-}
-
-
-.process .section-title {
-  color:
-    var(--ink);
 }
 
 
@@ -890,7 +1433,8 @@ img.nav__logo {
 
 
 .step {
-  position: relative;
+  position:
+    relative;
 
   min-width:
     0;
@@ -906,7 +1450,7 @@ img.nav__logo {
     var(--radius-md);
 
   background:
-    rgba(255, 255, 255, 0.72);
+    rgba(255, 255, 255, 0.74);
 
   backdrop-filter:
     blur(12px);
@@ -930,6 +1474,7 @@ img.nav__logo {
 
   align-items:
     center;
+
   justify-content:
     center;
 
@@ -969,9 +1514,6 @@ img.nav__logo {
   margin-bottom:
     9px;
 
-  color:
-    var(--ink);
-
   font-size:
     1.2rem;
 }
@@ -990,12 +1532,15 @@ img.nav__logo {
 
 
 /* =====================================================
-   9. GALLERY
+   15. GALLERY
 ===================================================== */
 
 .gallery {
   width:
-    min(calc(100% - 32px), 1200px);
+    min(
+      calc(100% - 32px),
+      1200px
+    );
 
   margin:
     45px auto;
@@ -1004,13 +1549,14 @@ img.nav__logo {
     80px 48px;
 
   border:
-    1px solid rgba(255, 255, 255, 0.48);
+    1px solid
+    rgba(255, 255, 255, 0.48);
 
   border-radius:
     var(--radius-xl);
 
   background:
-    rgba(255, 255, 255, 0.38);
+    rgba(255, 255, 255, 0.40);
 
   backdrop-filter:
     blur(9px);
@@ -1019,11 +1565,10 @@ img.nav__logo {
     blur(9px);
 
   box-shadow:
-    0 20px 50px rgba(71, 48, 67, 0.07);
+    0 20px 50px
+    rgba(71, 48, 67, 0.07);
 }
 
-
-/* ---------- Grid ---------- */
 
 .gallery__grid {
   display:
@@ -1039,8 +1584,6 @@ img.nav__logo {
     22px;
 }
 
-
-/* ---------- Gallery Card ---------- */
 
 .gallery__card {
   appearance:
@@ -1098,10 +1641,7 @@ img.nav__logo {
     cover;
 
   transition:
-    transform
-    0.55s var(--ease),
-    filter
-    0.4s ease;
+    transform 0.55s var(--ease);
 }
 
 
@@ -1132,8 +1672,6 @@ img.nav__logo {
 }
 
 
-/* ---------- "Ver diseño" ---------- */
-
 .gallery__card::after {
   content:
     "Ver diseño";
@@ -1163,9 +1701,6 @@ img.nav__logo {
   color:
     var(--brand-dark);
 
-  font-family:
-    var(--font-body);
-
   font-size:
     0.72rem;
 
@@ -1183,7 +1718,7 @@ img.nav__logo {
 
   box-shadow:
     0 5px 15px
-    rgba(51, 35, 49, 0.1);
+    rgba(51, 35, 49, 0.10);
 
   transition:
     opacity 0.25s ease,
@@ -1192,7 +1727,7 @@ img.nav__logo {
 
 
 /* =====================================================
-   10. LIGHTBOX
+   16. LIGHTBOX
 ===================================================== */
 
 .lightbox {
@@ -1244,8 +1779,6 @@ img.nav__logo {
 }
 
 
-/* ---------- Backdrop ---------- */
-
 .lightbox__backdrop {
   position:
     absolute;
@@ -1263,8 +1796,6 @@ img.nav__logo {
     blur(16px);
 }
 
-
-/* ---------- Modal ---------- */
 
 .lightbox__content {
   position:
@@ -1290,7 +1821,7 @@ img.nav__logo {
 
   border:
     1px solid
-    rgba(255, 255, 255, 0.2);
+    rgba(255, 255, 255, 0.20);
 
   border-radius:
     var(--radius-lg);
@@ -1301,34 +1832,12 @@ img.nav__logo {
   box-shadow:
     var(--shadow-lg);
 
-  scrollbar-width:
-    thin;
-
-  scrollbar-color:
-    var(--brand)
-    transparent;
-
   transform:
     translateY(20px)
     scale(0.97);
 
   transition:
-    transform 0.35s
-    var(--ease);
-}
-
-
-.lightbox__content::-webkit-scrollbar {
-  width: 7px;
-}
-
-
-.lightbox__content::-webkit-scrollbar-thumb {
-  border-radius:
-    var(--radius-pill);
-
-  background:
-    var(--brand);
+    transform 0.35s var(--ease);
 }
 
 
@@ -1339,8 +1848,6 @@ img.nav__logo {
     scale(1);
 }
 
-
-/* ---------- Image ---------- */
 
 .lightbox__image-wrapper {
   width:
@@ -1377,8 +1884,6 @@ img.nav__logo {
     contain;
 }
 
-
-/* ---------- Information ---------- */
 
 .lightbox__info {
   padding:
@@ -1443,17 +1948,10 @@ img.nav__logo {
 }
 
 
-/* ---------- Close ---------- */
-
-.lightbox__close {
+.lightbox__close,
+.lightbox__arrow {
   position:
     absolute;
-
-  top:
-    14px;
-
-  right:
-    14px;
 
   z-index:
     10;
@@ -1466,12 +1964,6 @@ img.nav__logo {
 
   justify-content:
     center;
-
-  width:
-    44px;
-
-  height:
-    44px;
 
   padding:
     0;
@@ -1488,12 +1980,6 @@ img.nav__logo {
   color:
     var(--ink);
 
-  font-size:
-    1.8rem;
-
-  line-height:
-    1;
-
   cursor:
     pointer;
 
@@ -1508,26 +1994,27 @@ img.nav__logo {
 }
 
 
-/* ---------- Arrows ---------- */
+.lightbox__close {
+  top:
+    14px;
+
+  right:
+    14px;
+
+  width:
+    44px;
+
+  height:
+    44px;
+
+  font-size:
+    1.8rem;
+}
+
 
 .lightbox__arrow {
-  position:
-    absolute;
-
   top:
     42%;
-
-  z-index:
-    10;
-
-  display:
-    flex;
-
-  align-items:
-    center;
-
-  justify-content:
-    center;
 
   width:
     48px;
@@ -1535,35 +2022,8 @@ img.nav__logo {
   height:
     48px;
 
-  padding:
-    0;
-
-  border:
-    none;
-
-  border-radius:
-    50%;
-
-  background:
-    rgba(255, 255, 255, 0.93);
-
-  color:
-    var(--ink);
-
   font-size:
     1.25rem;
-
-  cursor:
-    pointer;
-
-  box-shadow:
-    0 5px 18px
-    rgba(0, 0, 0, 0.17);
-
-  transition:
-    transform 0.25s var(--ease),
-    background-color 0.25s ease,
-    color 0.25s ease;
 }
 
 
@@ -1580,7 +2040,7 @@ img.nav__logo {
 
 
 /* =====================================================
-   11. CTA / FOOTER
+   17. CTA
 ===================================================== */
 
 .cta {
@@ -1596,53 +2056,17 @@ img.nav__logo {
   text-align:
     center;
 
-  color:
-    var(--ink);
-
   background:
     linear-gradient(
       135deg,
-      rgba(249, 189, 216, 0.96) 0%,
-      rgba(255, 240, 246, 0.96) 35%,
-      rgba(189, 225, 248, 0.96) 100%
+      rgba(249, 189, 216, 0.96),
+      rgba(255, 240, 246, 0.96),
+      rgba(189, 225, 248, 0.96)
     );
 }
 
 
-.cta::before {
-  content:
-    "";
-
-  position:
-    absolute;
-
-  width:
-    260px;
-
-  height:
-    260px;
-
-  left:
-    -90px;
-
-  bottom:
-    -130px;
-
-  border-radius:
-    50%;
-
-  background:
-    rgba(255, 255, 255, 0.35);
-}
-
-
 .cta h2 {
-  position:
-    relative;
-
-  z-index:
-    1;
-
   margin-bottom:
     12px;
 
@@ -1652,29 +2076,14 @@ img.nav__logo {
 
 
 .cta p {
-  position:
-    relative;
-
-  z-index:
-    1;
-
   max-width:
-    600px;
+    620px;
 
   margin:
     0 auto 30px;
 
   color:
     var(--ink-soft);
-}
-
-
-.cta .btn {
-  position:
-    relative;
-
-  z-index:
-    1;
 }
 
 
@@ -1692,59 +2101,12 @@ img.nav__logo {
 
 
 /* =====================================================
-   12. CONFETTI
+   18. DESKTOP HOVER
 ===================================================== */
 
-.confetti {
-  position:
-    fixed;
-
-  top:
-    -10px;
-
-  z-index:
-    2500;
-
-  width:
-    10px;
-
-  height:
-    10px;
-
-  border-radius:
-    3px;
-
-  opacity:
-    0.92;
-
-  pointer-events:
-    none;
-
-  animation:
-    fall linear forwards;
-}
-
-
-@keyframes fall {
-
-  to {
-    transform:
-      translateY(105vh)
-      rotate(420deg);
-
-    opacity:
-      0;
-  }
-
-}
-
-
-/* =====================================================
-   13. DESKTOP HOVER EFFECTS
-===================================================== */
-
-@media (hover: hover)
-and (pointer: fine) {
+@media
+  (hover: hover)
+  and (pointer: fine) {
 
   .btn--primary:hover {
     background:
@@ -1759,17 +2121,10 @@ and (pointer: fine) {
   }
 
 
-  .nav__brand:hover
-  img.nav__logo {
+  .nav__brand:hover img {
     transform:
       scale(1.04)
       rotate(-2deg);
-
-    filter:
-      drop-shadow(
-        0 6px 10px
-        rgba(243, 79, 118, 0.12)
-      );
   }
 
 
@@ -1785,12 +2140,17 @@ and (pointer: fine) {
   }
 
 
-  .pinata:hover {
-    filter:
-      drop-shadow(
-        0 22px 24px
-        rgba(55, 37, 52, 0.21)
-      );
+  .hero-product__card:hover {
+    box-shadow:
+      0 30px 65px
+      rgba(64, 45, 60, 0.20);
+  }
+
+
+  .hero-product__card:hover
+  .hero-product__img {
+    transform:
+      scale(1.035);
   }
 
 
@@ -1799,7 +2159,7 @@ and (pointer: fine) {
       translateY(-7px);
 
     border-color:
-      rgba(243, 79, 118, 0.2);
+      rgba(243, 79, 118, 0.20);
 
     box-shadow:
       var(--shadow-md);
@@ -1839,24 +2199,19 @@ and (pointer: fine) {
   }
 
 
-  .lightbox__close:hover {
-    background:
-      var(--brand);
-
-    color:
-      var(--white);
-
-    transform:
-      rotate(90deg);
-  }
-
-
+  .lightbox__close:hover,
   .lightbox__arrow:hover {
     background:
       var(--brand);
 
     color:
       var(--white);
+  }
+
+
+  .lightbox__close:hover {
+    transform:
+      rotate(90deg);
   }
 
 
@@ -1872,20 +2227,16 @@ and (pointer: fine) {
   }
 
 
-  .cta
-  .btn--primary:hover {
+  .cta .btn--primary:hover {
     background:
       var(--brand);
-
-    color:
-      var(--white);
   }
 
 }
 
 
 /* =====================================================
-   14. TABLET
+   19. TABLET
 ===================================================== */
 
 @media (max-width: 900px) {
@@ -1898,10 +2249,13 @@ and (pointer: fine) {
 
   .hero {
     gap:
-      35px;
+      40px;
 
     width:
-      min(calc(100% - 36px), 1200px);
+      min(
+        calc(100% - 36px),
+        1200px
+      );
 
     padding:
       55px 40px;
@@ -1917,7 +2271,7 @@ and (pointer: fine) {
   }
 
 
-  .hero__pinata-zone {
+  .hero__product-zone {
     flex-basis:
       300px;
   }
@@ -1944,15 +2298,10 @@ and (pointer: fine) {
 
 
 /* =====================================================
-   15. MOBILE
+   20. MOBILE
 ===================================================== */
 
 @media (max-width: 640px) {
-
-  /*
-     Fixed backgrounds can be weird on mobile Safari.
-     Scroll behaves much more reliably.
-  */
 
   body {
     background-attachment:
@@ -1966,7 +2315,7 @@ and (pointer: fine) {
   }
 
 
-  /* ---------- Nav ---------- */
+  /* NAV */
 
   .nav {
     min-height:
@@ -1989,7 +2338,7 @@ and (pointer: fine) {
   }
 
 
-  /* ---------- Hero ---------- */
+  /* HERO */
 
   .hero {
     width:
@@ -2002,10 +2351,10 @@ and (pointer: fine) {
       12px auto 60px;
 
     padding:
-      44px 22px 38px;
+      44px 22px 42px;
 
     gap:
-      38px;
+      42px;
 
     border-radius:
       26px;
@@ -2023,7 +2372,7 @@ and (pointer: fine) {
       center;
 
     background:
-      rgba(255, 255, 255, 0.56);
+      rgba(255, 255, 255, 0.55);
 
     backdrop-filter:
       blur(8px);
@@ -2047,16 +2396,20 @@ and (pointer: fine) {
 
   .hero__eyebrow {
     font-size:
-      0.7rem;
+      0.69rem;
   }
 
 
   .hero__title {
-    font-size:
-      clamp(2.7rem, 13vw, 4rem);
-
     margin-bottom:
       18px;
+
+    font-size:
+      clamp(
+        2.7rem,
+        13vw,
+        4rem
+      );
   }
 
 
@@ -2069,55 +2422,97 @@ and (pointer: fine) {
   }
 
 
-  .hero__pinata-zone {
+  .hero__product-zone {
     flex:
       none;
 
     width:
       100%;
 
-    min-width:
-      0;
-
     min-height:
-      370px;
-
-    display:
-      flex;
-
-    flex-direction:
-      column;
-
-    align-items:
-      center;
-
-    justify-content:
-      center;
+      400px;
   }
 
 
-  .hero__pinata-zone::before {
+  .hero__product-zone::before {
     width:
-      min(310px, 85vw);
+      min(320px, 88vw);
   }
 
 
-  .pinata {
+  .hero-product {
     width:
-      min(275px, 72vw);
+      min(100%, 285px);
+  }
 
-    max-width:
-      100%;
+
+  .hero-product__card {
+    padding:
+      12px;
+
+    border-radius:
+      24px;
+
+    transform:
+      rotate(-1.5deg);
+  }
+
+
+  .hero-product__image-wrap {
+    border-radius:
+      18px;
+  }
+
+
+  .hero-product__caption {
+    text-align:
+      left;
+  }
+
+
+  .hero-product__blob--1 {
+    width:
+      72px;
 
     height:
-      auto;
+      72px;
 
-    margin-inline:
-      auto;
+    left:
+      -15px;
   }
 
 
-  /* ---------- Process ---------- */
+  .hero-product__blob--2 {
+    width:
+      62px;
+
+    height:
+      62px;
+
+    right:
+      -12px;
+  }
+
+
+  .hero-product__sparkle--1 {
+    right:
+      -10px;
+  }
+
+
+  .hero-product__sparkle--2 {
+    left:
+      -10px;
+  }
+
+
+  .hero-product__sparkle--3 {
+    right:
+      -15px;
+  }
+
+
+  /* PROCESS */
 
   .process {
     padding:
@@ -2143,7 +2538,7 @@ and (pointer: fine) {
   }
 
 
-  /* ---------- Gallery ---------- */
+  /* GALLERY */
 
   .gallery {
     width:
@@ -2199,7 +2594,7 @@ and (pointer: fine) {
   }
 
 
-  /* ---------- CTA ---------- */
+  /* CTA */
 
   .cta {
     padding:
@@ -2207,12 +2602,9 @@ and (pointer: fine) {
   }
 
 
-  /* ---------- Lightbox ---------- */
+  /* LIGHTBOX */
 
   .lightbox {
-    align-items:
-      center;
-
     padding:
       14px;
   }
@@ -2296,10 +2688,22 @@ and (pointer: fine) {
 
 
 /* =====================================================
-   16. VERY SMALL PHONES
+   21. VERY SMALL PHONES
 ===================================================== */
 
 @media (max-width: 420px) {
+
+  .hero__product-zone {
+    min-height:
+      380px;
+  }
+
+
+  .hero-product {
+    width:
+      min(100%, 260px);
+  }
+
 
   .gallery__grid {
     grid-template-columns:
@@ -2312,35 +2716,11 @@ and (pointer: fine) {
       4 / 4.4;
   }
 
-
-  .hero__pinata-zone {
-    width:
-      100%;
-
-    min-height:
-      340px;
-  }
-
-
-  .pinata {
-    width:
-      min(250px, 74vw);
-
-    max-width:
-      100%;
-
-    height:
-      auto;
-
-    margin-inline:
-      auto;
-  }
-
 }
 
 
 /* =====================================================
-   17. SHORT SCREENS
+   22. SHORT SCREENS
 ===================================================== */
 
 @media (max-height: 700px) {
@@ -2369,12 +2749,6 @@ and (pointer: fine) {
   }
 
 
-  .lightbox__title {
-    margin-bottom:
-      4px;
-  }
-
-
   .lightbox__description {
     font-size:
       0.86rem;
@@ -2384,12 +2758,11 @@ and (pointer: fine) {
 
 
 /* =====================================================
-   18. ACCESSIBILITY
+   23. ACCESSIBILITY
 ===================================================== */
 
 a:focus-visible,
-button:focus-visible,
-.pinata:focus-visible {
+button:focus-visible {
   outline:
     3px solid
     var(--brand);
@@ -2400,10 +2773,11 @@ button:focus-visible,
 
 
 /* =====================================================
-   19. REDUCED MOTION
+   24. REDUCED MOTION
 ===================================================== */
 
-@media (prefers-reduced-motion: reduce) {
+@media
+  (prefers-reduced-motion: reduce) {
 
   html {
     scroll-behavior:

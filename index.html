@@ -3,43 +3,52 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
+    name="description"
+    content="Piñata Paradise crea piñatas personalizadas hechas a mano para todo tipo de celebraciones."
   >
 
-  <title>Piñata Paradise — Piñatas hechas a mano</title>
+  <title>Piñata Paradise | Piñatas personalizadas</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Work+Sans:wght@400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Work+Sans:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   >
 
-  <!-- CSS -->
+  <!-- Main CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
 
-  <!-- ============ NAV ============ -->
+  <!-- =================================================
+       NAVIGATION
+  ================================================== -->
 
   <header class="nav">
 
-   <a href="#" class="nav__brand" aria-label="Piñata Paradise - Inicio">
-  <img
-    src="img/pinata-paradise-logo.png"
-    alt="Piñata Paradise"
-    class="nav__logo"
-  >
-</a>
+    <a
+      href="#inicio"
+      class="nav__brand"
+      aria-label="Piñata Paradise - Inicio"
+    >
+      <img
+        src="img/pinata-paradise-logo.png"
+        alt="Piñata Paradise"
+        class="nav__logo"
+      >
+    </a>
 
     <a
-      class="nav__link"
       href="#contacto"
+      class="nav__link"
     >
       Contacto
     </a>
@@ -47,514 +56,494 @@
   </header>
 
 
-  <!-- ============ HERO ============ -->
+  <main>
 
-  <section class="hero">
+    <!-- =================================================
+         HERO
+    ================================================== -->
 
-    <div class="hero__copy">
+    <section
+      class="hero"
+      id="inicio"
+    >
 
-      <p class="hero__eyebrow">
-        Piñatas 100% personalizadas · Puerto Rico · est. 2023
-      </p>
+      <!-- Hero Copy -->
 
-      <h1 class="hero__title">
-        Cualquier idea.<br>
-        Hecha piñata.
-      </h1>
+      <div class="hero__copy">
 
-      <p class="hero__sub">
-        De personajes favoritos a temas imposibles — armamos cada piñata a mano, a tu medida.
-      </p>
+        <p class="hero__eyebrow">
+          Piñatas 100% personalizadas · Puerto Rico · est. 2023
+        </p>
 
-      <a
-        href="#galeria"
-        class="btn btn--primary"
-      >
-        Ver diseños
-      </a>
+        <h1 class="hero__title">
+          Cualquier idea.<br>
+          Hecha piñata.
+        </h1>
 
-    </div>
+        <p class="hero__sub">
+          De personajes favoritos a ideas completamente únicas.
+          Cada piñata se diseña y se crea a mano especialmente
+          para tu celebración.
+        </p>
+
+        <a
+          href="#galeria"
+          class="btn btn--primary"
+        >
+          Ver diseños
+        </a>
+
+      </div>
 
 
-    <div class="hero__pinata-zone">
+      <!-- =================================================
+           FEATURED PRODUCT
+      ================================================== -->
 
-      <svg
-        id="pinata"
-        class="pinata"
-        viewBox="0 0 300 340"
-        xmlns="http://www.w3.org/2000/svg"
-      >
+      <div class="hero__product-zone">
 
-        <defs>
+        <div
+          class="hero-product"
+          id="hero-product"
+        >
 
-          <pattern
-            id="fringe"
-            width="14"
-            height="14"
-            patternUnits="userSpaceOnUse"
+          <!-- Decorative sparkles -->
+
+          <span
+            class="hero-product__sparkle hero-product__sparkle--1"
+            aria-hidden="true"
+          ></span>
+
+          <span
+            class="hero-product__sparkle hero-product__sparkle--2"
+            aria-hidden="true"
+          ></span>
+
+          <span
+            class="hero-product__sparkle hero-product__sparkle--3"
+            aria-hidden="true"
+          ></span>
+
+
+          <!-- Decorative dots -->
+
+          <span
+            class="hero-product__dot hero-product__dot--1"
+            aria-hidden="true"
+          ></span>
+
+          <span
+            class="hero-product__dot hero-product__dot--2"
+            aria-hidden="true"
+          ></span>
+
+
+          <!-- Decorative blobs -->
+
+          <div
+            class="hero-product__blob hero-product__blob--1"
+            aria-hidden="true"
+          ></div>
+
+          <div
+            class="hero-product__blob hero-product__blob--2"
+            aria-hidden="true"
+          ></div>
+
+
+          <!-- Product Card -->
+
+          <div
+            class="hero-product__card"
+            id="hero-product-card"
           >
-            <path
-              d="M0,14 L7,0 L14,14 Z"
-              fill="#000"
-              opacity="0.18"
-            />
-          </pattern>
 
-          <clipPath id="body-clip">
-            <ellipse
-              cx="150"
-              cy="185"
-              rx="105"
-              ry="120"
-            />
-          </clipPath>
+            <span class="hero-product__badge">
+              Hecha a mano
+            </span>
 
-        </defs>
+            <div class="hero-product__image-wrap">
+
+              <img
+                src="img/pinata8.png"
+                alt="Piñata personalizada inspirada en Stitch"
+                class="hero-product__img"
+              >
+
+            </div>
 
 
-        <!-- string -->
+            <div class="hero-product__caption">
 
-        <line
-          x1="150"
-          y1="0"
-          x2="150"
-          y2="40"
-          stroke="#21201C"
-          stroke-width="2"
-        />
+              <div>
 
+                <span class="hero-product__label">
+                  Diseño personalizado
+                </span>
 
-        <!-- ears -->
+                <h2>
+                  Stitch
+                </h2>
 
-        <polygon
-          points="110,55 90,15 135,50"
-          fill="#FF6B4A"
-        />
+              </div>
 
-        <polygon
-          points="190,55 210,15 165,50"
-          fill="#0F6B65"
-        />
+              <span
+                class="hero-product__heart"
+                aria-hidden="true"
+              >
+                ♥
+              </span>
 
+            </div>
 
-        <!-- body -->
+          </div>
 
-        <g clip-path="url(#body-clip)">
-
-          <rect
-            x="0"
-            y="65"
-            width="300"
-            height="34"
-            fill="#FF6B4A"
-          />
-
-          <rect
-            x="0"
-            y="99"
-            width="300"
-            height="34"
-            fill="#FFC93C"
-          />
-
-          <rect
-            x="0"
-            y="133"
-            width="300"
-            height="34"
-            fill="#0F6B65"
-          />
-
-          <rect
-            x="0"
-            y="167"
-            width="300"
-            height="34"
-            fill="#FF3D8A"
-          />
-
-          <rect
-            x="0"
-            y="201"
-            width="300"
-            height="34"
-            fill="#FF6B4A"
-          />
-
-          <rect
-            x="0"
-            y="235"
-            width="300"
-            height="34"
-            fill="#FFC93C"
-          />
-
-          <rect
-            x="0"
-            y="269"
-            width="300"
-            height="34"
-            fill="#0F6B65"
-          />
-
-          <rect
-            x="0"
-            y="65"
-            width="300"
-            height="240"
-            fill="url(#fringe)"
-          />
-
-        </g>
+        </div>
 
 
-        <ellipse
-          cx="150"
-          cy="185"
-          rx="105"
-          ry="120"
-          fill="none"
-          stroke="#21201C"
-          stroke-width="3"
-        />
+        <p class="hero__hint">
+          Diseños hechos completamente a mano
+        </p>
+
+      </div>
+
+    </section>
 
 
-        <!-- face -->
+    <!-- =================================================
+         HOW IT WORKS
+    ================================================== -->
 
-        <circle
-          cx="120"
-          cy="170"
-          r="6"
-          fill="#21201C"
-        />
+    <section class="process">
 
-        <circle
-          cx="180"
-          cy="170"
-          r="6"
-          fill="#21201C"
-        />
-
-        <path
-          d="M120,205 Q150,225 180,205"
-          stroke="#21201C"
-          stroke-width="4"
-          fill="none"
-          stroke-linecap="round"
-        />
-
-      </svg>
+      <h2 class="section-title">
+        Cómo funciona
+      </h2>
 
 
-      <p class="hero__hint">
-        Toca la piñata
+      <div class="process__grid">
+
+        <article class="step">
+
+          <span class="step__num">
+            01
+          </span>
+
+          <h3>
+            Cuéntanos tu idea
+          </h3>
+
+          <p>
+            Un personaje, un tema o una idea completamente
+            diferente. Envíanos tu referencia por Instagram.
+          </p>
+
+        </article>
+
+
+        <article class="step">
+
+          <span class="step__num">
+            02
+          </span>
+
+          <h3>
+            Diseñamos contigo
+          </h3>
+
+          <p>
+            Ajustamos tamaño, colores y detalles antes
+            de comenzar a crear tu piñata.
+          </p>
+
+        </article>
+
+
+        <article class="step">
+
+          <span class="step__num">
+            03
+          </span>
+
+          <h3>
+            Armamos a mano
+          </h3>
+
+          <p>
+            Cada pieza, fleco y detalle se corta y se
+            monta cuidadosamente a mano.
+          </p>
+
+        </article>
+
+
+        <article class="step">
+
+          <span class="step__num">
+            04
+          </span>
+
+          <h3>
+            Celebras
+          </h3>
+
+          <p>
+            Recoges tu diseño terminado y listo para
+            convertirse en parte de la celebración.
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- =================================================
+         GALLERY
+    ================================================== -->
+
+    <section
+      class="gallery"
+      id="galeria"
+    >
+
+      <h2 class="section-title">
+        Algunos diseños
+      </h2>
+
+      <p class="section-sub">
+        Cada piñata es diseñada y creada a mano especialmente
+        para cada celebración.
       </p>
 
 
-      <div
-        id="surprise-badge"
-        class="surprise-badge hidden"
-      >
-        🎉 ¡Escríbenos y menciona esto para 10% de descuento!
+      <div class="gallery__grid">
+
+        <!-- 1 -->
+
+        <button
+          class="gallery__card"
+          type="button"
+          data-image="img/pinata1.png"
+          data-title="GOAT de Fortnite"
+          data-description="Piñata personalizada inspirada en el personaje GOAT de Fortnite, con sus colores y detalles característicos."
+        >
+
+          <img
+            src="img/pinata1.png"
+            alt="Piñata GOAT de Fortnite"
+            loading="lazy"
+          >
+
+          <span>
+            GOAT de Fortnite
+          </span>
+
+        </button>
+
+
+        <!-- 2 -->
+
+        <button
+          class="gallery__card"
+          type="button"
+          data-image="img/pinata2.png"
+          data-title="Pink Flamingo"
+          data-description="Piñata de flamingo rosado con un diseño tropical, divertido y lleno de personalidad."
+        >
+
+          <img
+            src="img/pinata2.png"
+            alt="Piñata Pink Flamingo"
+            loading="lazy"
+          >
+
+          <span>
+            Pink Flamingo
+          </span>
+
+        </button>
+
+
+        <!-- 3 -->
+
+        <button
+          class="gallery__card"
+          type="button"
+          data-image="img/pinata3.png"
+          data-title="Roblox Character"
+          data-description="Piñata personalizada inspirada en un personaje de Roblox, creada con detalles y colores basados en el diseño original."
+        >
+
+          <img
+            src="img/pinata3.png"
+            alt="Piñata Roblox Character"
+            loading="lazy"
+          >
+
+          <span>
+            Roblox Character
+          </span>
+
+        </button>
+
+
+        <!-- 4 -->
+
+        <button
+          class="gallery__card"
+          type="button"
+          data-image="img/pinata4.png"
+          data-title="Luca Paguro"
+          data-description="Piñata inspirada en Luca Paguro, con un diseño colorido que captura el estilo alegre del personaje."
+        >
+
+          <img
+            src="img/pinata4.png"
+            alt="Piñata Luca Paguro"
+            loading="lazy"
+          >
+
+          <span>
+            Luca Paguro
+          </span>
+
+        </button>
+
+
+        <!-- 5 -->
+
+        <button
+          class="gallery__card"
+          type="button"
+          data-image="img/pinata5.png"
+          data-title="Kirby"
+          data-description="Piñata inspirada en Kirby, con su clásico diseño rosado, redondo y súper reconocible."
+        >
+
+          <img
+            src="img/pinata5.png"
+            alt="Piñata Kirby"
+            loading="lazy"
+          >
+
+          <span>
+            Kirby
+          </span>
+
+        </button>
+
+
+        <!-- 6 -->
+
+        <button
+          class="gallery__card"
+          type="button"
+          data-image="img/pinata6.png"
+          data-title="Frida Kahlo"
+          data-description="Piñata artística inspirada en Frida Kahlo, con detalles florales y elementos visuales representativos de su estilo."
+        >
+
+          <img
+            src="img/pinata6.png"
+            alt="Piñata Frida Kahlo"
+            loading="lazy"
+          >
+
+          <span>
+            Frida Kahlo
+          </span>
+
+        </button>
+
+
+        <!-- 7 -->
+
+        <button
+          class="gallery__card"
+          type="button"
+          data-image="img/pinata7.png"
+          data-title="Hennessy Bottle"
+          data-description="Piñata personalizada en forma de botella de Hennessy, diseñada con detalles que recrean la apariencia de la botella original."
+        >
+
+          <img
+            src="img/pinata7.png"
+            alt="Piñata Hennessy Bottle"
+            loading="lazy"
+          >
+
+          <span>
+            Hennessy Bottle
+          </span>
+
+        </button>
+
+
+        <!-- 8 -->
+
+        <button
+          class="gallery__card"
+          type="button"
+          data-image="img/pinata8.png"
+          data-title="Stitch"
+          data-description="Piñata inspirada en Stitch, con su característico diseño azul y una expresión divertida y adorable."
+        >
+
+          <img
+            src="img/pinata8.png"
+            alt="Piñata Stitch"
+            loading="lazy"
+          >
+
+          <span>
+            Stitch
+          </span>
+
+        </button>
+
       </div>
 
-    </div>
+    </section>
 
-  </section>
-
-
-  <!-- ============ HOW IT WORKS ============ -->
-
-  <section class="process">
-
-    <h2 class="section-title">
-      Cómo funciona
-    </h2>
+  </main>
 
 
-    <div class="process__grid">
+  <!-- =================================================
+       CTA / CONTACT
+  ================================================== -->
 
-      <div class="step">
-
-        <span class="step__num">
-          01
-        </span>
-
-        <h3>
-          Cuéntanos tu idea
-        </h3>
-
-        <p>
-          Un personaje, un tema, algo random — mándanos referencia por Instagram.
-        </p>
-
-      </div>
-
-
-      <div class="step">
-
-        <span class="step__num">
-          02
-        </span>
-
-        <h3>
-          Diseñamos contigo
-        </h3>
-
-        <p>
-          Ajustamos tamaño, colores y detalles antes de empezar a armar.
-        </p>
-
-      </div>
-
-
-      <div class="step">
-
-        <span class="step__num">
-          03
-        </span>
-
-        <h3>
-          Armamos a mano
-        </h3>
-
-        <p>
-          Cada pieza, fleco y detalle se corta y pega a mano, sin moldes genéricos.
-        </p>
-
-      </div>
-
-
-      <div class="step">
-
-        <span class="step__num">
-          04
-        </span>
-
-        <h3>
-          Celebras
-        </h3>
-
-        <p>
-          Recoges tu piñata lista para romperse en la fiesta.
-        </p>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- ============ GALLERY ============ -->
-
-  <section
-    class="gallery"
-    id="galeria"
+  <footer
+    class="cta"
+    id="contacto"
   >
 
-    <h2 class="section-title">
-      Algunos diseños
+    <h2>
+      ¿Lista para tu piñata?
     </h2>
 
-    <p class="section-sub">
-      Cada piñata es diseñada y creada a mano especialmente para cada celebración.
+    <p>
+      Escríbenos con tu idea, la fecha de tu evento y
+      cualquier referencia que tengas. Te ayudamos con
+      el diseño, precio y disponibilidad.
     </p>
 
+    <a
+      href="https://www.instagram.com/pinataparadisepr/"
+      class="btn btn--primary"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      @pinataparadisepr en Instagram
+    </a>
 
-    <div class="gallery__grid">
-
-
-      <!-- PINATA 1 -->
-
-      <button
-        class="gallery__card"
-        type="button"
-        data-image="img/pinata1.png"
-        data-title="GOAT de Fortnite"
-        data-description="Piñata personalizada inspirada en el personaje GOAT de Fortnite, con sus colores y detalles característicos."
-      >
-
-        <img
-          src="img/pinata1.png"
-          alt="Piñata GOAT de Fortnite"
-          loading="lazy"
-        >
-
-        <span>
-          GOAT de Fortnite
-        </span>
-
-      </button>
+  </footer>
 
 
-      <!-- PINATA 2 -->
-
-      <button
-        class="gallery__card"
-        type="button"
-        data-image="img/pinata2.png"
-        data-title="Pink Flamingo"
-        data-description="Piñata de flamingo rosado con un diseño tropical, divertido y lleno de personalidad."
-      >
-
-        <img
-          src="img/pinata2.png"
-          alt="Piñata Pink Flamingo"
-          loading="lazy"
-        >
-
-        <span>
-          Pink Flamingo
-        </span>
-
-      </button>
-
-
-      <!-- PINATA 3 -->
-
-      <button
-        class="gallery__card"
-        type="button"
-        data-image="img/pinata3.png"
-        data-title="Roblox Character"
-        data-description="Piñata personalizada inspirada en un personaje de Roblox, creada con detalles y colores basados en el diseño original."
-      >
-
-        <img
-          src="img/pinata3.png"
-          alt="Piñata personaje de Roblox"
-          loading="lazy"
-        >
-
-        <span>
-          Roblox Character
-        </span>
-
-      </button>
-
-
-      <!-- PINATA 4 -->
-
-      <button
-        class="gallery__card"
-        type="button"
-        data-image="img/pinata4.png"
-        data-title="Luca Paguro"
-        data-description="Piñata inspirada en Luca Paguro, con un diseño colorido que captura el estilo alegre del personaje."
-      >
-
-        <img
-          src="img/pinata4.png"
-          alt="Piñata Luca Paguro"
-          loading="lazy"
-        >
-
-        <span>
-          Luca Paguro
-        </span>
-
-      </button>
-
-
-      <!-- PINATA 5 -->
-
-      <button
-        class="gallery__card"
-        type="button"
-        data-image="img/pinata5.png"
-        data-title="Kirby"
-        data-description="Piñata inspirada en Kirby, con su clásico diseño rosado, redondo y súper reconocible."
-      >
-
-        <img
-          src="img/pinata5.png"
-          alt="Piñata Kirby"
-          loading="lazy"
-        >
-
-        <span>
-          Kirby
-        </span>
-
-      </button>
-
-
-      <!-- PINATA 6 -->
-
-      <button
-        class="gallery__card"
-        type="button"
-        data-image="img/pinata6.png"
-        data-title="Frida Kahlo"
-        data-description="Piñata artística inspirada en Frida Kahlo, con detalles florales y elementos visuales representativos de su estilo."
-      >
-
-        <img
-          src="img/pinata6.png"
-          alt="Piñata Frida Kahlo"
-          loading="lazy"
-        >
-
-        <span>
-          Frida Kahlo
-        </span>
-
-      </button>
-
-
-      <!-- PINATA 7 -->
-
-      <button
-        class="gallery__card"
-        type="button"
-        data-image="img/pinata7.png"
-        data-title="Hennessy Bottle"
-        data-description="Piñata personalizada en forma de botella de Hennessy, diseñada con detalles que recrean la apariencia de la botella original."
-      >
-
-        <img
-          src="img/pinata7.png"
-          alt="Piñata botella Hennessy"
-          loading="lazy"
-        >
-
-        <span>
-          Hennessy Bottle
-        </span>
-
-      </button>
-
-
-      <!-- PINATA 8 -->
-
-      <button
-        class="gallery__card"
-        type="button"
-        data-image="img/pinata8.png"
-        data-title="Stitch"
-        data-description="Piñata inspirada en Stitch, con su característico diseño azul y una expresión divertida y adorable."
-      >
-
-        <img
-          src="img/pinata8.png"
-          alt="Piñata Stitch"
-          loading="lazy"
-        >
-
-        <span>
-          Stitch
-        </span>
-
-      </button>
-
-
-    </div>
-
-  </section>
-
-
-  <!-- ============ LIGHTBOX ============ -->
+  <!-- =================================================
+       GALLERY LIGHTBOX
+  ================================================== -->
 
   <div
     class="lightbox"
@@ -634,16 +623,14 @@
         </span>
 
         <h3
-          id="lightbox-title"
           class="lightbox__title"
-        >
-        </h3>
+          id="lightbox-title"
+        ></h3>
 
         <p
-          id="lightbox-description"
           class="lightbox__description"
-        >
-        </p>
+          id="lightbox-description"
+        ></p>
 
       </div>
 
@@ -652,35 +639,7 @@
   </div>
 
 
-  <!-- ============ CTA / FOOTER ============ -->
-
-  <footer
-    class="cta"
-    id="contacto"
-  >
-
-    <h2>
-      ¿Lista para tu piñata?
-    </h2>
-
-    <p>
-      Escríbenos con tu idea y te decimos precio y tiempo de entrega.
-    </p>
-
-    <a
-      href="https://www.instagram.com/pinataparadisepr/"
-      class="btn btn--primary"
-      target="_blank"
-      rel="noopener"
-    >
-      @pinataparadisepr en Instagram
-    </a>
-
-  </footer>
-
-
-  <!-- JavaScript -->
-
+  <!-- Main JavaScript -->
   <script src="script.js"></script>
 
 </body>
