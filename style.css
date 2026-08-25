@@ -1,0 +1,1144 @@
+/* =====================================================
+   PIÑATA PARADISE
+   Main Stylesheet
+===================================================== */
+
+
+/* =====================
+   TOKENS
+===================== */
+
+:root {
+  --paper: #FFF8ED;
+  --ink: #21201C;
+
+  --coral: #FF6B4A;
+  --teal: #0F6B65;
+  --yellow: #FFC93C;
+  --pink: #FF3D8A;
+
+  --white: #FFFFFF;
+
+  --font-display: 'Baloo 2', sans-serif;
+  --font-body: 'Work Sans', sans-serif;
+
+  --shadow-sm:
+    0 6px 18px rgba(33, 32, 28, 0.08);
+
+  --shadow-md:
+    0 14px 35px rgba(33, 32, 28, 0.12);
+
+  --shadow-lg:
+    0 25px 70px rgba(0, 0, 0, 0.25);
+
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 28px;
+
+  --ease:
+    cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* =====================
+   RESET
+===================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+body.lightbox-open {
+  overflow: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+}
+
+
+/* =====================
+   BUTTONS
+===================== */
+
+.btn {
+  display: inline-block;
+
+  padding: 14px 28px;
+
+  border-radius: 999px;
+
+  font-weight: 600;
+  text-decoration: none;
+
+  font-family: var(--font-body);
+
+  transition:
+    transform 0.25s var(--ease),
+    box-shadow 0.25s var(--ease),
+    background 0.25s ease;
+}
+
+.btn--primary {
+  background: var(--pink);
+  color: var(--paper);
+
+  box-shadow:
+    0 10px 24px rgba(255, 61, 138, 0.22);
+}
+
+.btn--primary:hover {
+  background: #e02d78;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 14px 30px rgba(255, 61, 138, 0.3);
+}
+
+
+/* =====================
+   GENERAL SECTIONS
+===================== */
+
+.section-title {
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+
+  text-align: center;
+
+  margin-bottom: 8px;
+}
+
+.section-sub {
+  text-align: center;
+
+  color: #6b6a63;
+
+  margin: 0 auto 40px;
+
+  max-width: 620px;
+}
+
+
+/* =====================
+   NAV
+===================== */
+
+.nav {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 24px 48px;
+}
+
+.nav__logo {
+  font-family: var(--font-display);
+
+  font-weight: 700;
+
+  font-size: 1.3rem;
+}
+
+.nav__link {
+  color: var(--ink);
+
+  text-decoration: none;
+
+  font-weight: 600;
+
+  transition: color 0.2s ease;
+}
+
+.nav__link:hover {
+  color: var(--pink);
+}
+
+
+/* =====================
+   HERO
+===================== */
+
+.hero {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 40px;
+
+  padding: 40px 48px 80px;
+
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  flex-wrap: wrap;
+}
+
+.hero__copy {
+  flex: 1 1 420px;
+
+  max-width: 520px;
+}
+
+.hero__eyebrow {
+  font-weight: 600;
+
+  color: var(--teal);
+
+  letter-spacing: 0.02em;
+
+  margin-bottom: 12px;
+
+  font-size: 0.9rem;
+
+  text-transform: uppercase;
+}
+
+.hero__title {
+  font-size: clamp(2.6rem, 6vw, 4rem);
+
+  line-height: 1.05;
+
+  margin-bottom: 20px;
+}
+
+.hero__sub {
+  font-size: 1.1rem;
+
+  color: #4a4942;
+
+  margin-bottom: 28px;
+
+  max-width: 440px;
+}
+
+.hero__pinata-zone {
+  flex: 1 1 300px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  position: relative;
+}
+
+
+/* =====================
+   HERO PIÑATA
+===================== */
+
+.pinata {
+  width: min(300px, 70vw);
+
+  height: auto;
+
+  cursor: pointer;
+
+  transform-origin: top center;
+
+  transition:
+    transform 0.15s ease,
+    filter 0.25s ease;
+}
+
+.pinata:hover {
+  filter: drop-shadow(
+    0 14px 15px rgba(33, 32, 28, 0.15)
+  );
+}
+
+.pinata.swing {
+  animation: swing 0.4s ease;
+}
+
+.pinata.broken {
+  animation: break-anim 0.45s ease forwards;
+}
+
+
+@keyframes swing {
+
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(-10deg);
+  }
+
+  50% {
+    transform: rotate(7deg);
+  }
+
+  75% {
+    transform: rotate(-3deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+
+}
+
+
+@keyframes break-anim {
+
+  0% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1.15) rotate(8deg);
+    opacity: 0;
+  }
+
+}
+
+
+.hero__hint {
+  margin-top: 12px;
+
+  font-size: 0.85rem;
+
+  color: #928f85;
+}
+
+.surprise-badge {
+  margin-top: 16px;
+
+  background: var(--yellow);
+
+  color: var(--ink);
+
+  padding: 12px 20px;
+
+  border-radius: var(--radius-sm);
+
+  font-weight: 600;
+
+  text-align: center;
+
+  max-width: 280px;
+
+  box-shadow: var(--shadow-sm);
+}
+
+.surprise-badge.hidden {
+  display: none;
+}
+
+
+/* =====================
+   PROCESS
+===================== */
+
+.process {
+  padding: 80px 48px;
+
+  background: var(--teal);
+
+  color: var(--paper);
+}
+
+.process .section-title {
+  color: var(--paper);
+}
+
+.process__grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(220px, 1fr));
+
+  gap: 28px;
+
+  max-width: 1100px;
+
+  margin: 40px auto 0;
+}
+
+.step {
+  transition: transform 0.25s var(--ease);
+}
+
+.step:hover {
+  transform: translateY(-4px);
+}
+
+.step__num {
+  display: block;
+
+  font-family: var(--font-display);
+
+  font-size: 1.6rem;
+
+  color: var(--yellow);
+
+  margin-bottom: 8px;
+}
+
+.step h3 {
+  margin-bottom: 8px;
+
+  font-size: 1.15rem;
+}
+
+.step p {
+  color: #d7ede9;
+
+  font-size: 0.95rem;
+}
+
+
+/* =====================================================
+   GALLERY
+===================================================== */
+
+.gallery {
+  padding: 100px 48px;
+
+  max-width: 1200px;
+
+  margin: 0 auto;
+}
+
+
+/* =====================
+   GALLERY GRID
+===================== */
+
+.gallery__grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 22px;
+}
+
+
+/* =====================
+   GALLERY CARD
+===================== */
+
+.gallery__card {
+  appearance: none;
+
+  position: relative;
+
+  width: 100%;
+
+  border: none;
+
+  padding: 0;
+
+  border-radius: var(--radius-md);
+
+  background: var(--white);
+
+  overflow: hidden;
+
+  cursor: pointer;
+
+  text-align: left;
+
+  box-shadow: var(--shadow-sm);
+
+  transition:
+    transform 0.35s var(--ease),
+    box-shadow 0.35s var(--ease);
+}
+
+
+/* image */
+
+.gallery__card img {
+  width: 100%;
+
+  aspect-ratio: 4 / 5;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.55s var(--ease),
+    filter 0.4s ease;
+}
+
+
+/* text */
+
+.gallery__card span {
+  display: block;
+
+  padding: 16px 18px;
+
+  color: var(--ink);
+
+  font-family: var(--font-display);
+
+  font-size: 1rem;
+
+  font-weight: 700;
+
+  background: var(--white);
+
+  transition: color 0.25s ease;
+}
+
+
+/* hover */
+
+.gallery__card:hover {
+  transform: translateY(-7px);
+
+  box-shadow: var(--shadow-md);
+}
+
+.gallery__card:hover img {
+  transform: scale(1.045);
+}
+
+.gallery__card:hover span {
+  color: var(--pink);
+}
+
+
+/* subtle image overlay */
+
+.gallery__card::after {
+  content: "Ver diseño";
+
+  position: absolute;
+
+  top: 14px;
+  right: 14px;
+
+  background: rgba(255, 255, 255, 0.92);
+
+  color: var(--ink);
+
+  padding: 8px 13px;
+
+  border-radius: 999px;
+
+  font-family: var(--font-body);
+
+  font-size: 0.75rem;
+
+  font-weight: 600;
+
+  opacity: 0;
+
+  transform: translateY(-5px);
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+
+  pointer-events: none;
+}
+
+.gallery__card:hover::after {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+/* =====================================================
+   LIGHTBOX
+===================================================== */
+
+.lightbox {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 2000;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px;
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+}
+
+
+/* active */
+
+.lightbox.active {
+  opacity: 1;
+
+  visibility: visible;
+
+  pointer-events: auto;
+}
+
+
+/* =====================
+   LIGHTBOX BACKDROP
+===================== */
+
+.lightbox__backdrop {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    rgba(17, 16, 15, 0.88);
+
+  backdrop-filter: blur(14px);
+
+  -webkit-backdrop-filter: blur(14px);
+}
+
+
+/* =====================
+   LIGHTBOX CONTENT
+===================== */
+
+.lightbox__content {
+  position: relative;
+
+  z-index: 1;
+
+  width: min(100%, 900px);
+
+  max-height: calc(100vh - 60px);
+
+  background: var(--paper);
+
+  border-radius: var(--radius-lg);
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  overscroll-behavior: contain;
+
+  box-shadow: var(--shadow-lg);
+
+  transform:
+    translateY(20px)
+    scale(0.97);
+
+  transition:
+    transform 0.35s var(--ease);
+
+  scrollbar-width: thin;
+  scrollbar-color: var(--pink) transparent;
+}
+
+.lightbox.active .lightbox__content {
+  transform:
+    translateY(0)
+    scale(1);
+}
+
+
+/* =====================
+   LIGHTBOX IMAGE
+===================== */
+
+.lightbox__image-wrapper {
+  width: 100%;
+
+  background: #151515;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.lightbox__image {
+  display: block;
+
+  width: 100%;
+
+  max-height: 68vh;
+
+  object-fit: contain;
+}
+
+
+/* =====================
+   LIGHTBOX INFORMATION
+===================== */
+
+.lightbox__info {
+  padding: 22px 28px 28px;
+
+  text-align: center;
+
+  background: var(--paper);
+}
+
+.lightbox__counter {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: var(--pink);
+
+  font-size: 0.8rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+.lightbox__title {
+  font-size: clamp(1.35rem, 3vw, 1.8rem);
+
+  margin-bottom: 6px;
+}
+
+.lightbox__description {
+  max-width: 620px;
+
+  margin: 0 auto;
+
+  color: #66635b;
+
+  font-size: 0.95rem;
+
+  line-height: 1.6;
+}
+
+
+/* =====================
+   LIGHTBOX CLOSE
+===================== */
+
+.lightbox__close {
+  position: absolute;
+
+  top: 14px;
+  right: 14px;
+
+  z-index: 10;
+
+  width: 44px;
+  height: 44px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 255, 255, 0.94);
+
+  color: var(--ink);
+
+  font-size: 1.8rem;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  box-shadow:
+    0 4px 16px rgba(0, 0, 0, 0.15);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.lightbox__close:hover {
+  background: var(--pink);
+
+  color: var(--white);
+
+  transform: rotate(90deg);
+}
+
+
+/* =====================
+   LIGHTBOX ARROWS
+===================== */
+
+.lightbox__arrow {
+  position: absolute;
+
+  top: 42%;
+
+  z-index: 10;
+
+  width: 48px;
+  height: 48px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 255, 255, 0.92);
+
+  color: var(--ink);
+
+  font-size: 1.3rem;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  box-shadow:
+    0 5px 18px rgba(0, 0, 0, 0.15);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.lightbox__arrow:hover {
+  background: var(--pink);
+
+  color: var(--white);
+}
+
+.lightbox__arrow--prev {
+  left: 18px;
+}
+
+.lightbox__arrow--prev:hover {
+  transform: translateX(-3px);
+}
+
+.lightbox__arrow--next {
+  right: 18px;
+}
+
+.lightbox__arrow--next:hover {
+  transform: translateX(3px);
+}
+
+
+/* =====================================================
+   CTA / FOOTER
+===================================================== */
+
+.cta {
+  text-align: center;
+
+  padding: 90px 48px;
+
+  background: var(--coral);
+
+  color: var(--paper);
+}
+
+.cta h2 {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+
+  margin-bottom: 12px;
+}
+
+.cta p {
+  margin-bottom: 28px;
+
+  opacity: 0.95;
+}
+
+.cta .btn--primary {
+  background: var(--ink);
+
+  box-shadow:
+    0 10px 25px rgba(33, 32, 28, 0.18);
+}
+
+.cta .btn--primary:hover {
+  background: #080807;
+}
+
+
+/* =====================================================
+   CONFETTI
+===================================================== */
+
+.confetti {
+  position: fixed;
+
+  top: -10px;
+
+  width: 10px;
+  height: 10px;
+
+  opacity: 0.9;
+
+  border-radius: 2px;
+
+  pointer-events: none;
+
+  animation: fall linear forwards;
+
+  z-index: 999;
+}
+
+@keyframes fall {
+
+  to {
+    transform:
+      translateY(100vh)
+      rotate(360deg);
+
+    opacity: 0;
+  }
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+
+/* Tablet */
+
+@media (max-width: 900px) {
+
+  .gallery__grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+/* Mobile */
+
+@media (max-width: 640px) {
+
+  .nav {
+    padding: 20px;
+  }
+
+
+  .hero {
+    padding:
+      24px
+      20px
+      60px;
+  }
+
+
+  .process,
+  .gallery,
+  .cta {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+
+  .gallery {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
+
+  .gallery__grid {
+    gap: 14px;
+  }
+
+
+  .gallery__card span {
+    padding: 13px;
+
+    font-size: 0.9rem;
+  }
+
+
+  /*
+     Always show "Ver diseño" on mobile
+     because phones don't have hover,
+     despite CSS developers apparently
+     needing to relearn this every decade.
+  */
+
+  .gallery__card::after {
+    opacity: 1;
+
+    transform: none;
+
+    top: 10px;
+    right: 10px;
+
+    padding: 6px 10px;
+
+    font-size: 0.68rem;
+  }
+
+
+  /* LIGHTBOX */
+
+  .lightbox {
+    padding: 14px;
+  }
+
+
+  .lightbox__content {
+    max-height:
+      calc(100vh - 28px);
+
+    border-radius: 20px;
+  }
+
+
+  .lightbox__image {
+    max-height: 62vh;
+  }
+
+
+  .lightbox__info {
+    padding:
+      18px
+      18px
+      22px;
+  }
+
+
+  .lightbox__description {
+    font-size: 0.88rem;
+  }
+
+
+  .lightbox__arrow {
+    width: 42px;
+    height: 42px;
+
+    top: 40%;
+
+    font-size: 1.1rem;
+  }
+
+
+  .lightbox__arrow--prev {
+    left: 10px;
+  }
+
+
+  .lightbox__arrow--next {
+    right: 10px;
+  }
+
+
+  .lightbox__close {
+    width: 40px;
+    height: 40px;
+
+    top: 10px;
+    right: 10px;
+  }
+
+}
+
+
+/* Very small phones */
+
+@media (max-width: 420px) {
+
+  .gallery__grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .gallery__card img {
+    aspect-ratio: 4 / 4.3;
+  }
+
+}
+
+
+/* =====================================================
+   ACCESSIBILITY
+===================================================== */
+
+a:focus-visible,
+button:focus-visible {
+  outline:
+    3px solid
+    var(--teal);
+
+  outline-offset: 3px;
+}
+
+
+/* =====================
+   REDUCED MOTION
+===================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+
+
+  .pinata.swing,
+  .pinata.broken,
+  .confetti {
+    animation: none !important;
+  }
+
+}
