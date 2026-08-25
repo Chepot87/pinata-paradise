@@ -22,7 +22,7 @@
   --ink-soft: #5f5662;
   --text-muted: #766d78;
 
-  /* ---------- Logo / brand palette ---------- */
+  /* ---------- Brand palette ---------- */
 
   --brand: #f34f76;
   --brand-dark: #da3d64;
@@ -35,13 +35,9 @@
   --blue-strong: #8ec9ef;
   --blue-light: #edf8ff;
 
-  /* ---------- Supporting pastel colors ---------- */
-
   --lavender: #e9ddff;
   --peach: #ffd9cb;
   --yellow: #ffd76a;
-
-  /* ---------- Compatibility colors ---------- */
 
   --coral: #ff7975;
   --teal: #79bfc2;
@@ -103,7 +99,23 @@ body {
 
   font-family: var(--font-body);
 
-  background: var(--paper);
+  background-color: var(--paper);
+
+  background-image:
+    linear-gradient(
+      rgba(255, 249, 251, 0.30),
+      rgba(255, 249, 251, 0.30)
+    ),
+    url("img/background.png");
+
+  background-size: cover;
+
+  background-position: center top;
+
+  background-repeat: no-repeat;
+
+  background-attachment: fixed;
+
   color: var(--ink);
 
   line-height: 1.6;
@@ -140,6 +152,7 @@ h1,
 h2,
 h3 {
   font-family: var(--font-display);
+
   color: var(--ink);
 }
 
@@ -266,7 +279,7 @@ a {
   padding: 8px 48px;
 
   background:
-    rgba(255, 249, 251, 0.88);
+    rgba(255, 249, 251, 0.74);
 
   border-bottom:
     1px solid rgba(243, 79, 118, 0.08);
@@ -276,11 +289,9 @@ a {
   -webkit-backdrop-filter: blur(18px);
 
   box-shadow:
-    0 4px 20px rgba(59, 38, 54, 0.035);
+    0 4px 20px rgba(59, 38, 54, 0.04);
 }
 
-
-/* ---------- Logo wrapper ---------- */
 
 .nav__brand {
   display: inline-flex;
@@ -292,8 +303,6 @@ a {
   text-decoration: none;
 }
 
-
-/* ---------- Image logo ---------- */
 
 img.nav__logo {
   width:
@@ -309,8 +318,6 @@ img.nav__logo {
 }
 
 
-/* ---------- Text-logo fallback ---------- */
-
 .nav__logo:not(img) {
   font-family: var(--font-display);
 
@@ -321,8 +328,6 @@ img.nav__logo {
   color: var(--brand);
 }
 
-
-/* ---------- Contact link ---------- */
 
 .nav__link {
   position: relative;
@@ -376,7 +381,6 @@ img.nav__logo {
   align-items: center;
   justify-content: space-between;
 
-  /* Allows the layout to wrap safely */
   flex-wrap: wrap;
 
   gap: 56px;
@@ -395,25 +399,31 @@ img.nav__logo {
   overflow: hidden;
 
   border:
-    1px solid rgba(243, 79, 118, 0.08);
+    1px solid rgba(255, 255, 255, 0.62);
 
   border-radius:
     var(--radius-xl);
 
+  /*
+     Translucent instead of opaque.
+     This allows background.png to show through.
+  */
+
   background:
-    linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.96) 0%,
-      rgba(255, 240, 246, 0.95) 45%,
-      rgba(237, 248, 255, 0.95) 100%
-    );
+    rgba(255, 255, 255, 0.46);
+
+  backdrop-filter:
+    blur(10px);
+
+  -webkit-backdrop-filter:
+    blur(10px);
 
   box-shadow:
-    var(--shadow-sm);
+    0 20px 55px rgba(71, 48, 67, 0.11);
 }
 
 
-/* ---------- Decorative hero glow ---------- */
+/* ---------- Decorative Hero Glow ---------- */
 
 .hero::before {
   content: "";
@@ -434,7 +444,7 @@ img.nav__logo {
 
   filter: blur(90px);
 
-  opacity: 0.48;
+  opacity: 0.24;
 }
 
 
@@ -457,11 +467,11 @@ img.nav__logo {
 
   filter: blur(95px);
 
-  opacity: 0.4;
+  opacity: 0.22;
 }
 
 
-/* ---------- Hero text ---------- */
+/* ---------- Hero Text ---------- */
 
 .hero__copy {
   position: relative;
@@ -487,7 +497,7 @@ img.nav__logo {
     var(--radius-pill);
 
   background:
-    var(--pink-soft);
+    rgba(255, 240, 246, 0.82);
 
   color:
     var(--brand-dark);
@@ -503,6 +513,12 @@ img.nav__logo {
 
   text-transform:
     uppercase;
+
+  backdrop-filter:
+    blur(8px);
+
+  -webkit-backdrop-filter:
+    blur(8px);
 }
 
 
@@ -590,22 +606,22 @@ img.nav__logo {
   background:
     linear-gradient(
       145deg,
-      rgba(189, 225, 248, 0.72),
-      rgba(249, 189, 216, 0.52),
-      rgba(233, 221, 255, 0.58)
+      rgba(189, 225, 248, 0.52),
+      rgba(249, 189, 216, 0.36),
+      rgba(233, 221, 255, 0.40)
     );
 
   box-shadow:
     inset
     0 0 60px
-    rgba(255, 255, 255, 0.5);
+    rgba(255, 255, 255, 0.45);
 
   transform:
     rotate(-5deg);
 }
 
 
-/* ---------- Interactive piñata ---------- */
+/* ---------- Interactive Piñata ---------- */
 
 .pinata {
   position: relative;
@@ -645,15 +661,11 @@ img.nav__logo {
 }
 
 
-/* ---------- Piñata swing ---------- */
-
 .pinata.swing {
   animation:
     swing 0.4s ease;
 }
 
-
-/* ---------- Piñata break ---------- */
 
 .pinata.broken {
   animation:
@@ -729,7 +741,7 @@ img.nav__logo {
 }
 
 
-/* ---------- "Toca la piñata" ---------- */
+/* ---------- Touch Hint ---------- */
 
 .hero__hint {
   position: relative;
@@ -744,13 +756,13 @@ img.nav__logo {
 
   border:
     1px solid
-    rgba(243, 79, 118, 0.1);
+    rgba(243, 79, 118, 0.12);
 
   border-radius:
     var(--radius-pill);
 
   background:
-    rgba(255, 255, 255, 0.74);
+    rgba(255, 255, 255, 0.72);
 
   color:
     var(--text-muted);
@@ -761,12 +773,18 @@ img.nav__logo {
   font-weight:
     600;
 
+  backdrop-filter:
+    blur(8px);
+
+  -webkit-backdrop-filter:
+    blur(8px);
+
   box-shadow:
     var(--shadow-xs);
 }
 
 
-/* ---------- Discount reward ---------- */
+/* ---------- Discount Reward ---------- */
 
 .surprise-badge {
   position: relative;
@@ -826,12 +844,17 @@ img.nav__logo {
 
   overflow: hidden;
 
+  /*
+     This section intentionally has its own background
+     to visually separate it from the page background.
+  */
+
   background:
     linear-gradient(
       135deg,
-      var(--pink-soft) 0%,
-      var(--blue-light) 52%,
-      rgba(233, 221, 255, 0.72) 100%
+      rgba(255, 240, 246, 0.95) 0%,
+      rgba(237, 248, 255, 0.95) 52%,
+      rgba(233, 221, 255, 0.92) 100%
     );
 
   color:
@@ -883,7 +906,7 @@ img.nav__logo {
     var(--radius-md);
 
   background:
-    rgba(255, 255, 255, 0.74);
+    rgba(255, 255, 255, 0.72);
 
   backdrop-filter:
     blur(12px);
@@ -972,16 +995,31 @@ img.nav__logo {
 
 .gallery {
   width:
-    100%;
-
-  max-width:
-    1200px;
+    min(calc(100% - 32px), 1200px);
 
   margin:
-    0 auto;
+    45px auto;
 
   padding:
-    110px 48px;
+    80px 48px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.48);
+
+  border-radius:
+    var(--radius-xl);
+
+  background:
+    rgba(255, 255, 255, 0.38);
+
+  backdrop-filter:
+    blur(9px);
+
+  -webkit-backdrop-filter:
+    blur(9px);
+
+  box-shadow:
+    0 20px 50px rgba(71, 48, 67, 0.07);
 }
 
 
@@ -1002,7 +1040,7 @@ img.nav__logo {
 }
 
 
-/* ---------- Gallery card ---------- */
+/* ---------- Gallery Card ---------- */
 
 .gallery__card {
   appearance:
@@ -1049,8 +1087,6 @@ img.nav__logo {
 }
 
 
-/* ---------- Card image ---------- */
-
 .gallery__card img {
   width:
     100%;
@@ -1068,8 +1104,6 @@ img.nav__logo {
     0.4s ease;
 }
 
-
-/* ---------- Card title ---------- */
 
 .gallery__card span {
   display:
@@ -1210,7 +1244,7 @@ img.nav__logo {
 }
 
 
-/* ---------- Background ---------- */
+/* ---------- Backdrop ---------- */
 
 .lightbox__backdrop {
   position:
@@ -1285,8 +1319,7 @@ img.nav__logo {
 
 
 .lightbox__content::-webkit-scrollbar {
-  width:
-    7px;
+  width: 7px;
 }
 
 
@@ -1307,7 +1340,7 @@ img.nav__logo {
 }
 
 
-/* ---------- Image area ---------- */
+/* ---------- Image ---------- */
 
 .lightbox__image-wrapper {
   width:
@@ -1345,7 +1378,7 @@ img.nav__logo {
 }
 
 
-/* ---------- Info ---------- */
+/* ---------- Information ---------- */
 
 .lightbox__info {
   padding:
@@ -1410,7 +1443,7 @@ img.nav__logo {
 }
 
 
-/* ---------- Close button ---------- */
+/* ---------- Close ---------- */
 
 .lightbox__close {
   position:
@@ -1475,7 +1508,7 @@ img.nav__logo {
 }
 
 
-/* ---------- Navigation arrows ---------- */
+/* ---------- Arrows ---------- */
 
 .lightbox__arrow {
   position:
@@ -1569,9 +1602,9 @@ img.nav__logo {
   background:
     linear-gradient(
       135deg,
-      var(--pink-light) 0%,
-      var(--pink-soft) 35%,
-      var(--blue) 100%
+      rgba(249, 189, 216, 0.96) 0%,
+      rgba(255, 240, 246, 0.96) 35%,
+      rgba(189, 225, 248, 0.96) 100%
     );
 }
 
@@ -1916,6 +1949,23 @@ and (pointer: fine) {
 
 @media (max-width: 640px) {
 
+  /*
+     Fixed backgrounds can be weird on mobile Safari.
+     Scroll behaves much more reliably.
+  */
+
+  body {
+    background-attachment:
+      scroll;
+
+    background-size:
+      auto 100vh;
+
+    background-position:
+      center top;
+  }
+
+
   /* ---------- Nav ---------- */
 
   .nav {
@@ -1939,9 +1989,7 @@ and (pointer: fine) {
   }
 
 
-  /* ===================================================
-     HERO MOBILE
-  =================================================== */
+  /* ---------- Hero ---------- */
 
   .hero {
     width:
@@ -1965,7 +2013,6 @@ and (pointer: fine) {
     text-align:
       center;
 
-    /* Critical mobile fix */
     flex-direction:
       column;
 
@@ -1974,6 +2021,15 @@ and (pointer: fine) {
 
     align-items:
       center;
+
+    background:
+      rgba(255, 255, 255, 0.56);
+
+    backdrop-filter:
+      blur(8px);
+
+    -webkit-backdrop-filter:
+      blur(8px);
   }
 
 
@@ -2013,12 +2069,6 @@ and (pointer: fine) {
   }
 
 
-  /*
-     Give the piñata zone its own full row
-     instead of competing with the text
-     for horizontal space.
-  */
-
   .hero__pinata-zone {
     flex:
       none;
@@ -2051,11 +2101,6 @@ and (pointer: fine) {
       min(310px, 85vw);
   }
 
-
-  /*
-     Keeps the entire SVG inside
-     the available mobile width.
-  */
 
   .pinata {
     width:
@@ -2101,8 +2146,20 @@ and (pointer: fine) {
   /* ---------- Gallery ---------- */
 
   .gallery {
+    width:
+      calc(100% - 24px);
+
+    margin:
+      30px auto;
+
     padding:
-      75px 20px;
+      65px 20px;
+
+    border-radius:
+      26px;
+
+    background:
+      rgba(255, 255, 255, 0.46);
   }
 
 
@@ -2120,11 +2177,6 @@ and (pointer: fine) {
       0.9rem;
   }
 
-
-  /*
-     Mobile has no hover,
-     so keep this visible.
-  */
 
   .gallery__card::after {
     top:
@@ -2289,7 +2341,6 @@ and (pointer: fine) {
 
 /* =====================================================
    17. SHORT SCREENS
-   Prevent lightbox text from being cut off
 ===================================================== */
 
 @media (max-height: 700px) {
