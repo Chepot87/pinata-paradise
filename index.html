@@ -1,85 +1,279 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
   <meta
     name="description"
     content="Piñata Paradise crea piñatas personalizadas hechas a mano para todo tipo de celebraciones."
   >
-  <meta name="theme-color" content="#fff9fb">
 
-  <title>Piñata Paradise | Piñatas personalizadas</title>
+  <meta
+    name="theme-color"
+    content="#fff9fb"
+  >
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <title>
+    Piñata Paradise | Piñatas personalizadas
+  </title>
+
+
+  <!-- =================================================
+       GOOGLE FONTS
+  ================================================== -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
   <link
     href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Work+Sans:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   >
 
-  <link rel="stylesheet" href="style.css">
+
+  <!-- =================================================
+       MAIN CSS
+  ================================================== -->
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
 </head>
+
+
 <body>
+
 
   <!-- =================================================
        NAVIGATION
   ================================================== -->
 
   <header class="nav">
-    <a href="#inicio" class="nav__brand" aria-label="Piñata Paradise - Inicio">
+
+    <!-- LOGO -->
+
+    <a
+      href="#inicio"
+      class="nav__brand"
+      aria-label="Piñata Paradise - Inicio"
+    >
+
       <img
         src="img/pinata-paradise-logo.png"
         alt="Piñata Paradise"
         class="nav__logo"
       >
+
     </a>
 
-    <a href="#contacto" class="nav__link">Contacto</a>
+
+    <!-- MOBILE MENU BUTTON -->
+
+    <button
+      class="nav__toggle"
+      id="nav-toggle"
+      type="button"
+      aria-label="Abrir menú"
+      aria-controls="nav-menu"
+      aria-expanded="false"
+    >
+
+      <span></span>
+      <span></span>
+      <span></span>
+
+    </button>
+
+
+    <!-- NAVIGATION LINKS -->
+
+    <nav
+      class="nav__menu"
+      id="nav-menu"
+      aria-label="Navegación principal"
+    >
+
+      <a
+        href="#inicio"
+        class="nav__link"
+      >
+        Inicio
+      </a>
+
+      <a
+        href="#como-funciona"
+        class="nav__link"
+      >
+        Cómo funciona
+      </a>
+
+      <a
+        href="#galeria"
+        class="nav__link"
+      >
+        Galería
+      </a>
+
+      <a
+        href="#contacto"
+        class="nav__link nav__link--contact"
+      >
+        Contacto
+      </a>
+
+    </nav>
+
   </header>
 
+
+  <!-- =================================================
+       MAIN CONTENT
+  ================================================== -->
+
   <main>
+
 
     <!-- =================================================
          HERO
     ================================================== -->
 
-    <section class="hero" id="inicio">
+    <section
+      class="hero"
+      id="inicio"
+    >
+
+
+      <!-- HERO COPY -->
+
       <div class="hero__copy">
+
         <p class="hero__eyebrow">
-          Piñatas 100% personalizadas · Puerto Rico · est. 2023
+
+          Piñatas 100% personalizadas ·
+          Puerto Rico · est. 2023
+
         </p>
+
 
         <h1 class="hero__title">
+
           Cualquier idea.<br>
+
           Hecha piñata.
+
         </h1>
 
+
         <p class="hero__sub">
+
           De personajes favoritos a ideas completamente únicas.
+
           Cada piñata se diseña y se crea a mano especialmente
           para tu celebración.
+
         </p>
 
-        <a href="#galeria" class="btn btn--primary">Ver diseños</a>
+
+        <a
+          href="#galeria"
+          class="btn btn--primary"
+        >
+
+          Ver diseños
+
+        </a>
+
       </div>
 
+
+      <!-- =================================================
+           FEATURED PIÑATA
+      ================================================== -->
+
       <div class="hero__product-zone">
+
+
         <div class="hero-product">
-          <span class="hero-product__sparkle hero-product__sparkle--1" aria-hidden="true"></span>
-          <span class="hero-product__sparkle hero-product__sparkle--2" aria-hidden="true"></span>
-          <span class="hero-product__sparkle hero-product__sparkle--3" aria-hidden="true"></span>
 
-          <span class="hero-product__dot hero-product__dot--1" aria-hidden="true"></span>
-          <span class="hero-product__dot hero-product__dot--2" aria-hidden="true"></span>
 
-          <div class="hero-product__blob hero-product__blob--1" aria-hidden="true"></div>
-          <div class="hero-product__blob hero-product__blob--2" aria-hidden="true"></div>
+          <!-- DECORATIVE SPARKLES -->
 
-          <div class="hero-product__card" id="hero-product-card">
-            <span class="hero-product__badge">Hecha a mano</span>
+          <span
+            class="hero-product__sparkle hero-product__sparkle--1"
+            aria-hidden="true"
+          ></span>
+
+          <span
+            class="hero-product__sparkle hero-product__sparkle--2"
+            aria-hidden="true"
+          ></span>
+
+          <span
+            class="hero-product__sparkle hero-product__sparkle--3"
+            aria-hidden="true"
+          ></span>
+
+
+          <!-- DECORATIVE DOTS -->
+
+          <span
+            class="hero-product__dot hero-product__dot--1"
+            aria-hidden="true"
+          ></span>
+
+          <span
+            class="hero-product__dot hero-product__dot--2"
+            aria-hidden="true"
+          ></span>
+
+
+          <!-- DECORATIVE BLOBS -->
+
+          <div
+            class="hero-product__blob hero-product__blob--1"
+            aria-hidden="true"
+          ></div>
+
+          <div
+            class="hero-product__blob hero-product__blob--2"
+            aria-hidden="true"
+          ></div>
+
+
+          <!-- PRODUCT CARD -->
+
+          <div
+            class="hero-product__card"
+            id="hero-product-card"
+          >
+
+
+            <span class="hero-product__badge">
+
+              Hecha a mano
+
+            </span>
+
 
             <div class="hero-product__image-wrap">
+
               <img
                 src="img/pinata8.png"
                 alt="Piñata personalizada inspirada en Stitch"
@@ -88,82 +282,237 @@
                 fetchpriority="high"
                 decoding="async"
               >
+
             </div>
+
 
             <div class="hero-product__caption">
+
+
               <div>
-                <span class="hero-product__label">Diseño personalizado</span>
-                <h2>Stitch</h2>
+
+                <span class="hero-product__label">
+
+                  Diseño personalizado
+
+                </span>
+
+                <h2>
+
+                  Stitch
+
+                </h2>
+
               </div>
 
-              <span class="hero-product__heart" aria-hidden="true">♥</span>
+
+              <span
+                class="hero-product__heart"
+                aria-hidden="true"
+              >
+
+                ♥
+
+              </span>
+
+
             </div>
+
           </div>
+
         </div>
 
-        <p class="hero__hint">Diseños hechos completamente a mano</p>
+
+        <p class="hero__hint">
+
+          Diseños hechos completamente a mano
+
+        </p>
+
       </div>
+
     </section>
+
 
     <!-- =================================================
          HOW IT WORKS
     ================================================== -->
 
-    <section class="process" aria-labelledby="process-title">
-      <h2 class="section-title" id="process-title">Cómo funciona</h2>
+    <section
+      class="process"
+      id="como-funciona"
+      aria-labelledby="process-title"
+    >
+
+
+      <h2
+        class="section-title"
+        id="process-title"
+      >
+
+        Cómo funciona
+
+      </h2>
+
 
       <div class="process__grid">
-        <article class="step">
-          <span class="step__num">01</span>
-          <h3>Cuéntanos tu idea</h3>
-          <p>
-            Un personaje, un tema o una idea completamente
-            diferente. Envíanos tu referencia por Instagram.
-          </p>
-        </article>
+
+
+        <!-- STEP 1 -->
 
         <article class="step">
-          <span class="step__num">02</span>
-          <h3>Diseñamos contigo</h3>
+
+          <span class="step__num">
+
+            01
+
+          </span>
+
+
+          <h3>
+
+            Cuéntanos tu idea
+
+          </h3>
+
+
           <p>
+
+            Un personaje, un tema o una idea completamente
+            diferente.
+
+            Envíanos tu referencia por Instagram.
+
+          </p>
+
+        </article>
+
+
+        <!-- STEP 2 -->
+
+        <article class="step">
+
+          <span class="step__num">
+
+            02
+
+          </span>
+
+
+          <h3>
+
+            Diseñamos contigo
+
+          </h3>
+
+
+          <p>
+
             Ajustamos tamaño, colores y detalles antes
             de comenzar a crear tu piñata.
+
           </p>
+
         </article>
 
+
+        <!-- STEP 3 -->
+
         <article class="step">
-          <span class="step__num">03</span>
-          <h3>Armamos a mano</h3>
+
+          <span class="step__num">
+
+            03
+
+          </span>
+
+
+          <h3>
+
+            Armamos a mano
+
+          </h3>
+
+
           <p>
+
             Cada pieza, fleco y detalle se corta y se
             monta cuidadosamente a mano.
+
           </p>
+
         </article>
 
+
+        <!-- STEP 4 -->
+
         <article class="step">
-          <span class="step__num">04</span>
-          <h3>Celebras</h3>
+
+          <span class="step__num">
+
+            04
+
+          </span>
+
+
+          <h3>
+
+            Celebras
+
+          </h3>
+
+
           <p>
+
             Recoges tu diseño terminado y listo para
             convertirse en parte de la celebración.
+
           </p>
+
         </article>
+
+
       </div>
+
     </section>
+
 
     <!-- =================================================
          GALLERY
     ================================================== -->
 
-    <section class="gallery" id="galeria" aria-labelledby="gallery-title">
-      <h2 class="section-title" id="gallery-title">Algunos diseños</h2>
+    <section
+      class="gallery"
+      id="galeria"
+      aria-labelledby="gallery-title"
+    >
+
+
+      <h2
+        class="section-title"
+        id="gallery-title"
+      >
+
+        Algunos diseños
+
+      </h2>
+
 
       <p class="section-sub">
+
         Cada piñata es diseñada y creada a mano especialmente
         para cada celebración.
+
       </p>
 
+
       <div class="gallery__grid">
+
+
+        <!-- =================================================
+             PIÑATA 1
+        ================================================== -->
+
         <button
           class="gallery__card"
           type="button"
@@ -171,14 +520,26 @@
           data-title="GOAT de Fortnite"
           data-description="Piñata personalizada inspirada en el personaje GOAT de Fortnite, con sus colores y detalles característicos."
         >
+
           <img
             src="img/pinata1.png"
             alt="Piñata GOAT de Fortnite"
             loading="lazy"
             decoding="async"
           >
-          <span>GOAT de Fortnite</span>
+
+          <span>
+
+            GOAT de Fortnite
+
+          </span>
+
         </button>
+
+
+        <!-- =================================================
+             PIÑATA 2
+        ================================================== -->
 
         <button
           class="gallery__card"
@@ -187,14 +548,26 @@
           data-title="Pink Flamingo"
           data-description="Piñata de flamingo rosado con un diseño tropical, divertido y lleno de personalidad."
         >
+
           <img
             src="img/pinata2.png"
             alt="Piñata Pink Flamingo"
             loading="lazy"
             decoding="async"
           >
-          <span>Pink Flamingo</span>
+
+          <span>
+
+            Pink Flamingo
+
+          </span>
+
         </button>
+
+
+        <!-- =================================================
+             PIÑATA 3
+        ================================================== -->
 
         <button
           class="gallery__card"
@@ -203,14 +576,26 @@
           data-title="Roblox Character"
           data-description="Piñata personalizada inspirada en un personaje de Roblox, creada con detalles y colores basados en el diseño original."
         >
+
           <img
             src="img/pinata3.png"
             alt="Piñata Roblox Character"
             loading="lazy"
             decoding="async"
           >
-          <span>Roblox Character</span>
+
+          <span>
+
+            Roblox Character
+
+          </span>
+
         </button>
+
+
+        <!-- =================================================
+             PIÑATA 4
+        ================================================== -->
 
         <button
           class="gallery__card"
@@ -219,14 +604,26 @@
           data-title="Luca Paguro"
           data-description="Piñata inspirada en Luca Paguro, con un diseño colorido que captura el estilo alegre del personaje."
         >
+
           <img
             src="img/pinata4.png"
             alt="Piñata Luca Paguro"
             loading="lazy"
             decoding="async"
           >
-          <span>Luca Paguro</span>
+
+          <span>
+
+            Luca Paguro
+
+          </span>
+
         </button>
+
+
+        <!-- =================================================
+             PIÑATA 5
+        ================================================== -->
 
         <button
           class="gallery__card"
@@ -235,14 +632,26 @@
           data-title="Kirby"
           data-description="Piñata inspirada en Kirby, con su clásico diseño rosado, redondo y súper reconocible."
         >
+
           <img
             src="img/pinata5.png"
             alt="Piñata Kirby"
             loading="lazy"
             decoding="async"
           >
-          <span>Kirby</span>
+
+          <span>
+
+            Kirby
+
+          </span>
+
         </button>
+
+
+        <!-- =================================================
+             PIÑATA 6
+        ================================================== -->
 
         <button
           class="gallery__card"
@@ -251,14 +660,26 @@
           data-title="Frida Kahlo"
           data-description="Piñata artística inspirada en Frida Kahlo, con detalles florales y elementos visuales representativos de su estilo."
         >
+
           <img
             src="img/pinata6.png"
             alt="Piñata Frida Kahlo"
             loading="lazy"
             decoding="async"
           >
-          <span>Frida Kahlo</span>
+
+          <span>
+
+            Frida Kahlo
+
+          </span>
+
         </button>
+
+
+        <!-- =================================================
+             PIÑATA 7
+        ================================================== -->
 
         <button
           class="gallery__card"
@@ -267,14 +688,26 @@
           data-title="Hennessy Bottle"
           data-description="Piñata personalizada en forma de botella de Hennessy, diseñada con detalles que recrean la apariencia de la botella original."
         >
+
           <img
             src="img/pinata7.png"
             alt="Piñata Hennessy Bottle"
             loading="lazy"
             decoding="async"
           >
-          <span>Hennessy Bottle</span>
+
+          <span>
+
+            Hennessy Bottle
+
+          </span>
+
         </button>
+
+
+        <!-- =================================================
+             PIÑATA 8
+        ================================================== -->
 
         <button
           class="gallery__card"
@@ -283,30 +716,59 @@
           data-title="Stitch"
           data-description="Piñata inspirada en Stitch, con su característico diseño azul y una expresión divertida y adorable."
         >
+
           <img
             src="img/pinata8.png"
             alt="Piñata Stitch"
             loading="lazy"
             decoding="async"
           >
-          <span>Stitch</span>
+
+          <span>
+
+            Stitch
+
+          </span>
+
         </button>
+
+
       </div>
+
     </section>
+
+
   </main>
+
 
   <!-- =================================================
        CTA / CONTACT
   ================================================== -->
 
-  <footer class="cta" id="contacto">
-    <h2>¿Lista para tu piñata?</h2>
+  <footer
+    class="cta"
+    id="contacto"
+  >
+
+
+    <h2>
+
+      ¿Lista para tu piñata?
+
+    </h2>
+
 
     <p>
-      Escríbenos con tu idea, la fecha de tu evento y
-      cualquier referencia que tengas. Te ayudamos con
-      el diseño, precio y disponibilidad.
+
+      Escríbenos con tu idea,
+      la fecha de tu evento y
+      cualquier referencia que tengas.
+
+      Te ayudamos con el diseño,
+      precio y disponibilidad.
+
     </p>
+
 
     <a
       href="https://www.instagram.com/pinataparadisepr/"
@@ -314,16 +776,35 @@
       target="_blank"
       rel="noopener noreferrer"
     >
+
       @pinataparadisepr en Instagram
+
     </a>
+
+
   </footer>
+
 
   <!-- =================================================
        GALLERY LIGHTBOX
   ================================================== -->
 
-  <div class="lightbox" id="lightbox" aria-hidden="true">
-    <div class="lightbox__backdrop" aria-hidden="true"></div>
+  <div
+    class="lightbox"
+    id="lightbox"
+    aria-hidden="true"
+  >
+
+
+    <!-- BACKDROP -->
+
+    <div
+      class="lightbox__backdrop"
+      aria-hidden="true"
+    ></div>
+
+
+    <!-- LIGHTBOX CONTENT -->
 
     <div
       class="lightbox__content"
@@ -333,14 +814,23 @@
       aria-describedby="lightbox-description"
       tabindex="-1"
     >
+
+
+      <!-- CLOSE BUTTON -->
+
       <button
         class="lightbox__close"
         id="lightbox-close"
         type="button"
         aria-label="Cerrar imagen"
       >
+
         &times;
+
       </button>
+
+
+      <!-- PREVIOUS -->
 
       <button
         class="lightbox__arrow lightbox__arrow--prev"
@@ -348,10 +838,16 @@
         type="button"
         aria-label="Imagen anterior"
       >
+
         &#10094;
+
       </button>
 
+
+      <!-- IMAGE -->
+
       <div class="lightbox__image-wrapper">
+
         <img
           id="lightbox-image"
           class="lightbox__image"
@@ -359,7 +855,11 @@
           alt=""
           decoding="async"
         >
+
       </div>
+
+
+      <!-- NEXT -->
 
       <button
         class="lightbox__arrow lightbox__arrow--next"
@@ -367,24 +867,55 @@
         type="button"
         aria-label="Siguiente imagen"
       >
+
         &#10095;
+
       </button>
 
+
+      <!-- INFORMATION -->
+
       <div class="lightbox__info">
+
+
         <span
           class="lightbox__counter"
           id="lightbox-counter"
           aria-live="polite"
         >
+
           1 / 8
+
         </span>
 
-        <h3 class="lightbox__title" id="lightbox-title"></h3>
-        <p class="lightbox__description" id="lightbox-description"></p>
+
+        <h3
+          class="lightbox__title"
+          id="lightbox-title"
+        ></h3>
+
+
+        <p
+          class="lightbox__description"
+          id="lightbox-description"
+        ></p>
+
+
       </div>
+
+
     </div>
+
   </div>
 
+
+  <!-- =================================================
+       MAIN JAVASCRIPT
+  ================================================== -->
+
   <script src="script.js"></script>
+
+
 </body>
+
 </html>
