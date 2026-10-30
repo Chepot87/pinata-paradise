@@ -2778,3 +2778,40 @@ button:focus-visible,
   }
 
 }
+
+/* Always-visible language selector, including when the mobile menu is closed. */
+.language-switch {
+  display: flex;
+  flex-shrink: 0;
+  order: 3;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid var(--pink-light);
+  border-radius: var(--radius-pill);
+  background: var(--white);
+}
+.language-switch[hidden] { display: none; }
+.language-switch button {
+  min-width: 44px;
+  min-height: 44px;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--ink);
+  font-size: .8rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.language-switch button[aria-pressed="true"] {
+  background: var(--ink);
+  color: var(--white);
+}
+html[lang="en"] .gallery__card::after { content: "View design"; }
+.nav { gap: 16px; }
+@media (min-width: 701px) {
+  .nav__menu { margin-left: auto; }
+}
+@media (max-width: 700px) {
+  .language-switch { order: 0; margin-left: auto; }
+  .nav__toggle { flex-shrink: 0; }
+}
